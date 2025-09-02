@@ -197,26 +197,38 @@
             text-stroke: 1px var(--white);
         }
         
-        .hero-title-line2::before {
-            content: 'LEARNING.';
+        .hero-title-line2 .stroke-layer-1,
+        .hero-title-line2 .stroke-layer-2,
+        .hero-title-line2 .stroke-layer-3,
+        .hero-title-line2 .stroke-layer-4 {
             position: absolute;
             top: 0;
             left: 0;
             color: transparent;
-            -webkit-text-stroke: 3px var(--white);
-            text-stroke: 3px var(--white);
+        }
+        
+        .hero-title-line2 .stroke-layer-1 {
+            -webkit-text-stroke: 2px var(--white);
+            text-stroke: 2px var(--white);
             z-index: -1;
         }
         
-        .hero-title-line2::after {
-            content: 'LEARNING.';
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: transparent;
-            -webkit-text-stroke: 5px rgba(255,255,255,0.3);
-            text-stroke: 5px rgba(255,255,255,0.3);
+        .hero-title-line2 .stroke-layer-2 {
+            -webkit-text-stroke: 3px var(--white);
+            text-stroke: 3px var(--white);
             z-index: -2;
+        }
+        
+        .hero-title-line2 .stroke-layer-3 {
+            -webkit-text-stroke: 4px var(--white);
+            text-stroke: 4px var(--white);
+            z-index: -3;
+        }
+        
+        .hero-title-line2 .stroke-layer-4 {
+            -webkit-text-stroke: 5px var(--white);
+            text-stroke: 5px var(--white);
+            z-index: -4;
         }
 
         .hero-title-accent {
@@ -498,40 +510,38 @@
         }
 
         .speaker-avatar {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, var(--red), var(--purple));
+            background: #1a1a1a;
+            border: 2px solid var(--red);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Bebas Neue', sans-serif;
             font-size: 2.5rem;
             color: var(--white);
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             position: relative;
             overflow: hidden;
         }
 
         .speaker-avatar img {
-            width: 70%;
-            height: 70%;
-            object-fit: cover;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        /* 준형 이미지는 크게 유지 */
-        .speaker-card:nth-child(3) .speaker-avatar img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .speaker-avatar .avatar-fallback {
             position: relative;
             z-index: 1;
+            background: linear-gradient(135deg, var(--red), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .speaker-name {
@@ -773,7 +783,13 @@
             
             <h1>
                 <span class="hero-title-line1">DECISION-FOCUSED</span>
-                <span class="hero-title-line2">LEARNING<span class="hero-title-accent">.</span></span>
+                <span class="hero-title-line2">
+                    <span class="stroke-layer-4">LEARNING<span class="hero-title-accent">.</span></span>
+                    <span class="stroke-layer-3">LEARNING<span class="hero-title-accent">.</span></span>
+                    <span class="stroke-layer-2">LEARNING<span class="hero-title-accent">.</span></span>
+                    <span class="stroke-layer-1">LEARNING<span class="hero-title-accent">.</span></span>
+                    LEARNING<span class="hero-title-accent">.</span>
+                </span>
             </h1>
             
             <p class="hero-subtitle">Bridging Prediction and Optimization in Financial Markets</p>
