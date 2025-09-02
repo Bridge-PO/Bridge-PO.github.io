@@ -181,6 +181,7 @@
             letter-spacing: -0.02em;
             text-transform: uppercase;
             margin-bottom: 2rem;
+            font-weight: 400;
         }
 
         .hero-title-line1 {
@@ -191,8 +192,11 @@
         .hero-title-line2 {
             display: block;
             color: transparent;
-            -webkit-text-stroke: 2px var(--white);
-            text-stroke: 2px var(--white);
+            -webkit-text-stroke: 3px var(--white);
+            text-stroke: 3px var(--white);
+            -webkit-text-fill-color: transparent;
+            paint-order: stroke fill;
+            letter-spacing: -0.02em;
         }
 
         .hero-title-accent {
@@ -447,6 +451,7 @@
             color: var(--gray);
             align-self: center;
             text-align: right;
+            line-height: 1.4;
         }
 
         /* Speakers */
@@ -752,14 +757,14 @@
                 <span class="hero-title-line2">LEARNING<span class="hero-title-accent">.</span></span>
             </h1>
             
-            <p class="hero-subtitle">Financial Optimization Through End-to-End Learning</p>
+            <p class="hero-subtitle">Bridging Prediction and Optimization in Financial Markets</p>
             
             <div class="hero-grid">
                 <div class="hero-left">
                     <p class="hero-description">
-                        A paradigm shift in machine learning for optimization. Learn how to align ML objectives 
-                        directly with decision quality, not just prediction accuracy. Master the techniques that 
-                        are revolutionizing portfolio optimization and financial decision-making.
+                        Learn how Decision-Focused Learning directly aligns machine learning training objectives 
+                        with the quality of downstream decisions. Through hands-on exercises with PyTorch and cvxpylayers, 
+                        master the techniques that achieve superior financial decisions even when sacrificing prediction accuracy.
                     </p>
                     
                     <div class="hero-cta">
@@ -782,8 +787,8 @@
                         <div class="stat-label">Expert Speakers</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Hands-on Labs</div>
+                        <div class="stat-number">3 LABS</div>
+                        <div class="stat-label">Hands-on Exercises</div>
                     </div>
                 </div>
             </div>
@@ -795,15 +800,15 @@
         <div class="section-header">
             <div class="section-number">01</div>
             <h2>What You'll Master</h2>
-            <p class="section-subtitle">Six Core Topics in Decision-Focused Learning</p>
+            <p class="section-subtitle">From Theory to Practice in Decision-Focused Learning</p>
         </div>
         
         <div class="topics-grid">
             <div class="topic-card">
                 <div class="topic-number">01</div>
-                <h3 class="topic-title">DFL Foundations</h3>
+                <h3 class="topic-title">Theoretical Background</h3>
                 <p class="topic-description">
-                    Mathematical framework, gradient flow through optimization layers, and theoretical underpinnings.
+                    Mathematical foundations, gradient backpropagation through optimization layers, differentiable vs non-differentiable structures.
                 </p>
             </div>
             <div class="topic-card">
@@ -824,21 +829,21 @@
                 <div class="topic-number">04</div>
                 <h3 class="topic-title">Goal-Based Investment</h3>
                 <p class="topic-description">
-                    Extension to personalized investment strategies with multiple objectives and constraints.
+                    Personalized investment strategies with goal programming methodology and priority optimization.
                 </p>
             </div>
             <div class="topic-card">
                 <div class="topic-number">05</div>
                 <h3 class="topic-title">Index Tracking</h3>
                 <p class="topic-description">
-                    Cardinality-constrained optimization and semidefinite relaxation techniques.
+                    Partial index replication with limited assets using semidefinite relaxation techniques.
                 </p>
             </div>
             <div class="topic-card">
                 <div class="topic-number">06</div>
-                <h3 class="topic-title">Future Directions</h3>
+                <h3 class="topic-title">Surrogate Models</h3>
                 <p class="topic-description">
-                    Open research challenges and integration with reinforcement learning approaches.
+                    Addressing non-differentiable objectives and gradient challenges in complex financial problems.
                 </p>
             </div>
         </div>
@@ -849,7 +854,7 @@
         <div class="section-header">
             <div class="section-number">02</div>
             <h2>Tutorial Schedule</h2>
-            <p class="section-subtitle">Two Hours of Intensive Learning</p>
+            <p class="section-subtitle">2 Hours • 3 Hands-on Exercises • 5 Expert Speakers</p>
         </div>
         
         <div class="schedule-container">
@@ -857,41 +862,41 @@
                 <div class="schedule-time">14:00</div>
                 <div class="schedule-content">
                     <h3>Introduction & Motivation</h3>
-                    <p>Overview of DFL paradigm and motivation in financial contexts</p>
+                    <p>DFL vs PFL overview, financial applications motivation, key conceptual distinctions</p>
                 </div>
-                <div class="schedule-speaker">Yongjae Lee</div>
+                <div class="schedule-speaker">Yongjae Lee<br>(20 min)</div>
             </div>
             <div class="schedule-item">
                 <div class="schedule-time">14:20</div>
                 <div class="schedule-content">
-                    <h3>DFL Theoretical Foundations</h3>
-                    <p>Mathematical framework and PyTorch implementation basics</p>
+                    <h3>Background in Decision-Focused Learning</h3>
+                    <p>Theoretical considerations, backpropagation challenges, PyTorch hands-on with cvxpylayers</p>
                 </div>
-                <div class="schedule-speaker">Haeun Jeon</div>
+                <div class="schedule-speaker">Haeun Jeon<br>(30 min)</div>
             </div>
             <div class="schedule-item">
                 <div class="schedule-time">14:50</div>
                 <div class="schedule-content">
-                    <h3>Mean-Variance Optimization Lab</h3>
-                    <p>Live coding session with real market data</p>
+                    <h3>DFL in Mean-Variance Optimization</h3>
+                    <p>Markowitz framework, complete pipeline implementation, PFL vs DFL comparison with real data</p>
                 </div>
-                <div class="schedule-speaker">Junhyeong Lee</div>
+                <div class="schedule-speaker">Junhyeong Lee<br>(30 min)</div>
             </div>
             <div class="schedule-item">
                 <div class="schedule-time">15:20</div>
                 <div class="schedule-content">
-                    <h3>Advanced Applications</h3>
-                    <p>Goal-based investment and partial index tracking</p>
+                    <h3>Goal-Based Investment & Index Tracking</h3>
+                    <p>Goal programming, partial index tracking, surrogate models for non-differentiable problems</p>
                 </div>
-                <div class="schedule-speaker">Hyunglip Bae</div>
+                <div class="schedule-speaker">Hyunglip Bae<br>(30 min)</div>
             </div>
             <div class="schedule-item">
                 <div class="schedule-time">15:50</div>
                 <div class="schedule-content">
-                    <h3>Future Directions & Q&A</h3>
-                    <p>Open challenges and interactive discussion</p>
+                    <h3>Closing Remarks</h3>
+                    <p>Open research challenges, future research directions, Q&A session</p>
                 </div>
-                <div class="schedule-speaker">Yongjae Lee</div>
+                <div class="schedule-speaker">Yongjae Lee<br>(10 min)</div>
             </div>
         </div>
     </section>
@@ -975,18 +980,22 @@
                     <h3>What You'll Receive</h3>
                     <ul>
                         <li>Complete Lecture Slides</li>
-                        <li>Jupyter Notebooks</li>
+                        <li>Pre-configured Jupyter Notebooks</li>
                         <li>Real Market Datasets</li>
+                        <li>Starter Code Templates</li>
                         <li>GitHub Repository Access</li>
+                        <li>Reference Paper List</li>
                     </ul>
                 </div>
                 <div class="info-item">
-                    <h3>Key Dates</h3>
+                    <h3>Key Information</h3>
                     <ul>
-                        <li>Early Registration: Oct 31</li>
-                        <li>Regular Registration: Nov 30</li>
-                        <li>Tutorial Date: Dec 14</li>
+                        <li>Date: December 14, 2025</li>
+                        <li>Time: 14:00 - 16:00 (2 hours)</li>
+                        <li>Format: In-person Tutorial</li>
                         <li>Location: Vancouver, Canada</li>
+                        <li>Early Bird: October 31, 2025</li>
+                        <li>Registration: November 30, 2025</li>
                     </ul>
                 </div>
             </div>
