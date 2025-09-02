@@ -484,6 +484,22 @@
             font-size: 2.5rem;
             color: var(--white);
             clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .speaker-avatar .avatar-fallback {
+            position: relative;
+            z-index: 1;
         }
 
         .speaker-name {
@@ -890,31 +906,51 @@
         
         <div class="speakers-grid">
             <div class="speaker-card">
-                <div class="speaker-avatar">YL</div>
+                <div class="speaker-avatar">
+                    <!-- 이미지 파일명: yongjae-lee.jpg -->
+                    <img src="images/yongjae-lee.jpg" alt="Yongjae Lee" onerror="this.style.display='none'">
+                    <span class="avatar-fallback">YL</span>
+                </div>
                 <h3 class="speaker-name">Yongjae Lee</h3>
                 <p class="speaker-role">Lead Organizer</p>
                 <p class="speaker-affiliation">UNIST</p>
             </div>
             <div class="speaker-card">
-                <div class="speaker-avatar">WK</div>
+                <div class="speaker-avatar">
+                    <!-- 이미지 파일명: woochang-kim.jpg -->
+                    <img src="images/woochang-kim.jpg" alt="Woo Chang Kim" onerror="this.style.display='none'">
+                    <span class="avatar-fallback">WK</span>
+                </div>
                 <h3 class="speaker-name">Woo Chang Kim</h3>
                 <p class="speaker-role">Co-Organizer</p>
                 <p class="speaker-affiliation">KAIST</p>
             </div>
             <div class="speaker-card">
-                <div class="speaker-avatar">JL</div>
+                <div class="speaker-avatar">
+                    <!-- 이미지 파일명: junhyeong-lee.jpg -->
+                    <img src="images/junhyeong-lee.jpg" alt="Junhyeong Lee" onerror="this.style.display='none'">
+                    <span class="avatar-fallback">JL</span>
+                </div>
                 <h3 class="speaker-name">Junhyeong Lee</h3>
                 <p class="speaker-role">Instructor</p>
                 <p class="speaker-affiliation">UNIST</p>
             </div>
             <div class="speaker-card">
-                <div class="speaker-avatar">HB</div>
+                <div class="speaker-avatar">
+                    <!-- 이미지 파일명: hyunglip-bae.jpg -->
+                    <img src="images/hyunglip-bae.jpg" alt="Hyunglip Bae" onerror="this.style.display='none'">
+                    <span class="avatar-fallback">HB</span>
+                </div>
                 <h3 class="speaker-name">Hyunglip Bae</h3>
                 <p class="speaker-role">Instructor</p>
                 <p class="speaker-affiliation">KAIST</p>
             </div>
             <div class="speaker-card">
-                <div class="speaker-avatar">HJ</div>
+                <div class="speaker-avatar">
+                    <!-- 이미지 파일명: haeun-jeon.jpg -->
+                    <img src="images/haeun-jeon.jpg" alt="Haeun Jeon" onerror="this.style.display='none'">
+                    <span class="avatar-fallback">HJ</span>
+                </div>
                 <h3 class="speaker-name">Haeun Jeon</h3>
                 <p class="speaker-role">Instructor</p>
                 <p class="speaker-affiliation">KAIST</p>
@@ -1032,6 +1068,22 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+
+        // Handle speaker image loading errors
+        document.querySelectorAll('.speaker-avatar img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+                // Fallback text will be shown automatically
+            });
+            
+            img.addEventListener('load', function() {
+                // Hide the fallback text when image loads successfully
+                const fallback = this.nextElementSibling;
+                if (fallback && fallback.classList.contains('avatar-fallback')) {
+                    fallback.style.display = 'none';
                 }
             });
         });
