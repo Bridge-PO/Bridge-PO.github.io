@@ -191,9 +191,32 @@
 
         .hero-title-line2 {
             display: block;
+            position: relative;
             color: transparent;
-            -webkit-text-stroke: 2px var(--white);
-            text-stroke: 2px var(--white);
+            -webkit-text-stroke: 1px var(--white);
+            text-stroke: 1px var(--white);
+        }
+        
+        .hero-title-line2::before {
+            content: 'LEARNING.';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            -webkit-text-stroke: 3px var(--white);
+            text-stroke: 3px var(--white);
+            z-index: -1;
+        }
+        
+        .hero-title-line2::after {
+            content: 'LEARNING.';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            -webkit-text-stroke: 5px rgba(255,255,255,0.3);
+            text-stroke: 5px rgba(255,255,255,0.3);
+            z-index: -2;
         }
 
         .hero-title-accent {
@@ -475,15 +498,15 @@
         }
 
         .speaker-avatar {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto 1.5rem;
             background: linear-gradient(135deg, var(--red), var(--purple));
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--white);
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             position: relative;
@@ -491,12 +514,19 @@
         }
 
         .speaker-avatar img {
-            width: 100%;
-            height: 100%;
+            width: 70%;
+            height: 70%;
             object-fit: cover;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* 준형 이미지는 크게 유지 */
+        .speaker-card:nth-child(3) .speaker-avatar img {
+            width: 100%;
+            height: 100%;
         }
 
         .speaker-avatar .avatar-fallback {
