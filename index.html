@@ -463,36 +463,134 @@
         }
 
         .schedule-item {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 3rem;
-            padding: 2rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 1px;
+            background: var(--darker);
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
             transition: all 0.3s;
         }
 
         .schedule-item:hover {
-            padding-left: 2rem;
-            border-left: 4px solid var(--red);
+            border-color: var(--red);
+        }
+
+        .schedule-header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            padding: 2rem;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s;
+        }
+
+        .schedule-header:hover {
             background: linear-gradient(90deg, rgba(255,0,64,0.1) 0%, transparent 50%);
         }
 
         .schedule-time {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: var(--red);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
-        .schedule-content h3 {
+        .time-duration {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--red);
+            line-height: 1;
+        }
+
+        .session-number {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        .schedule-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .schedule-title h3 {
             font-family: 'Oswald', sans-serif;
             font-size: 1.5rem;
             font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            margin: 0;
         }
 
-        .schedule-content p {
+        .toggle-icon {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--red);
+            transition: transform 0.3s;
+        }
+
+        .schedule-item.active .toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .schedule-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: var(--black);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .schedule-item.active .schedule-details {
+            max-height: 600px;
+        }
+
+        .detail-content {
+            padding: 2rem 3rem;
+        }
+
+        .detail-content h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--red);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .detail-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-content li {
+            color: var(--light-gray);
+            line-height: 1.8;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detail-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+        }
+
+        .detail-content .sub-list {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+        }
+
+        .detail-content .sub-list li::before {
+            content: '•';
             color: var(--gray);
+        }
+
+        .detail-content strong {
+            color: var(--white);
         }
 
         /* Speakers */
@@ -680,58 +778,12 @@
         /* Footer */
         footer {
             background: var(--darker);
-            padding: 4rem;
+            padding: 2rem 4rem;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .footer-brand h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .footer-links h4 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-            color: var(--red);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-            display: block;
-            padding: 0.5rem 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: var(--gray);
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        footer a:hover {
+            color: var(--white) !important;
         }
 
         /* Mobile Responsive Improvements */
@@ -889,23 +941,36 @@
             }
 
             /* Schedule Mobile */
-            .schedule-item {
+            .schedule-header {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-                padding: 1.5rem 0;
-            }
-
-            .schedule-item:hover {
-                padding-left: 1rem;
+                padding: 1.5rem;
             }
 
             .schedule-time {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
             }
 
-            .schedule-content h3 {
-                font-size: 1.25rem;
+            .time-duration {
+                font-size: 1.5rem;
+            }
+
+            .schedule-title {
+                margin-top: 0.5rem;
+            }
+
+            .schedule-title h3 {
+                font-size: 1.125rem;
+            }
+
+            .detail-content {
+                padding: 1.5rem;
+            }
+
+            .schedule-item.active .schedule-details {
+                max-height: 800px;
             }
 
             /* Speakers Mobile */
@@ -966,22 +1031,17 @@
 
             /* Footer Mobile */
             footer {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            footer p {
+                font-size: 0.75rem !important;
+                line-height: 1.8;
             }
 
-            .footer-brand h3 {
-                font-size: 1.5rem;
-            }
-
-            .footer-bottom {
-                margin-top: 2rem;
-                padding-top: 1.5rem;
-                font-size: 0.75rem;
+            footer a {
+                display: inline-block;
+                margin: 0.25rem 0;
             }
         }
 
@@ -1035,9 +1095,8 @@
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#overview">Overview</a></li>
-                <li><a href="#topics">Topics</a></li>
                 <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#organizers">Organizers</a></li>
                 <li><a href="#register">Register</a></li>
             </ul>
         </div>
@@ -1088,111 +1147,158 @@
         </div>
     </section>
 
-    <!-- Topics Section -->
-    <section id="topics" class="container">
-        <div class="section-header">
-            <div class="section-number">01</div>
-            <h2>Key Topics</h2>
-            <p class="section-subtitle">From Theory to Practice in Decision-Focused Learning</p>
-        </div>
-        
-        <div class="topics-grid">
-            <div class="topic-card">
-                <div class="topic-number">01</div>
-                <h3 class="topic-title">DFL Foundations</h3>
-                <p class="topic-description">
-                    Overview of the paradigm, mathematical underpinnings, and key conceptual distinctions from prediction-focused learning.
-                </p>
-            </div>
-            <div class="topic-card">
-                <div class="topic-number">02</div>
-                <h3 class="topic-title">PyTorch Implementation</h3>
-                <p class="topic-description">
-                    Hands-on coding with cvxpylayers for differentiable convex optimization and gradient backpropagation in neural networks.
-                </p>
-            </div>
-            <div class="topic-card">
-                <div class="topic-number">03</div>
-                <h3 class="topic-title">Mean-Variance Optimization</h3>
-                <p class="topic-description">
-                    Apply DFL to Markowitz portfolio optimization, comparing PFL vs DFL prediction models with real market data.
-                </p>
-            </div>
-            <div class="topic-card">
-                <div class="topic-number">04</div>
-                <h3 class="topic-title">Goal-Based Investment</h3>
-                <p class="topic-description">
-                    Personalized investment strategies incorporating goal programming methodology and priority optimization.
-                </p>
-            </div>
-            <div class="topic-card">
-                <div class="topic-number">05</div>
-                <h3 class="topic-title">Partial Index Tracking</h3>
-                <p class="topic-description">
-                    Replicate benchmark performance with limited assets using semidefinite relaxation techniques.
-                </p>
-            </div>
-            <div class="topic-card">
-                <div class="topic-number">06</div>
-                <h3 class="topic-title">Future Directions</h3>
-                <p class="topic-description">
-                    Open research challenges, emerging applications, and integration opportunities in financial AI.
-                </p>
-            </div>
-        </div>
-    </section>
-
     <!-- Schedule Section -->
     <section id="schedule" class="container">
         <div class="section-header">
-            <div class="section-number">02</div>
+            <div class="section-number">01</div>
             <h2>Tutorial Schedule</h2>
             <p class="section-subtitle">2 Hours • 3 Hands-on Exercises • Interactive Sessions</p>
         </div>
         
         <div class="schedule-container">
             <div class="schedule-item">
-                <div class="schedule-time">Session 1</div>
-                <div class="schedule-content">
-                    <h3>Introduction & Motivation</h3>
-                    <p>DFL vs PFL overview, financial applications motivation, key conceptual distinctions</p>
+                <div class="schedule-header" onclick="toggleSchedule(this)">
+                    <div class="schedule-time">
+                        <span class="time-duration">20 min</span>
+                        <span class="session-number">Session 1</span>
+                    </div>
+                    <div class="schedule-title">
+                        <h3>Introduction & Motivation</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                </div>
+                <div class="schedule-details">
+                    <div class="detail-content">
+                        <h4>Speaker: Yongjae Lee</h4>
+                        <ul>
+                            <li>Overview of Decision-Focused Learning (DFL) vs. Prediction-Focused Learning (PFL)</li>
+                            <li>Motivation in financial applications: mean-variance optimization, goal-based investing</li>
+                            <li>Key conceptual distinctions and intuition behind decision-aware training</li>
+                            <li>Why prediction accuracy doesn't always lead to better decisions</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="schedule-item">
-                <div class="schedule-time">Session 2</div>
-                <div class="schedule-content">
-                    <h3>Background in Decision-Focused Learning</h3>
-                    <p>Theoretical considerations, backpropagation challenges, PyTorch hands-on with cvxpylayers</p>
+                <div class="schedule-header" onclick="toggleSchedule(this)">
+                    <div class="schedule-time">
+                        <span class="time-duration">30 min</span>
+                        <span class="session-number">Session 2</span>
+                    </div>
+                    <div class="schedule-title">
+                        <h3>Background in Decision-Focused Learning</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                </div>
+                <div class="schedule-details">
+                    <div class="detail-content">
+                        <h4>Speaker: Haeun Jeon</h4>
+                        <ul>
+                            <li><strong>PFL vs DFL Pipeline:</strong> Understanding the fundamental paradigm shift from two-stage to end-to-end learning</li>
+                            <li><strong>Theoretical Considerations:</strong> Challenges of back-propagating through optimization problems, handling non-differentiable structures</li>
+                            <li><strong>[Hands-on Exercise]</strong> PyTorch Implementation:
+                                <ul class="sub-list">
+                                    <li>Building a simple DFL model from scratch</li>
+                                    <li>Integrating cvxpylayers for differentiable optimization</li>
+                                    <li>Observing gradient flow from decisions to predictions</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="schedule-item">
-                <div class="schedule-time">Session 3</div>
-                <div class="schedule-content">
-                    <h3>DFL in Mean-Variance Optimization</h3>
-                    <p>Markowitz framework, complete pipeline implementation, PFL vs DFL comparison with real data</p>
+                <div class="schedule-header" onclick="toggleSchedule(this)">
+                    <div class="schedule-time">
+                        <span class="time-duration">30 min</span>
+                        <span class="session-number">Session 3</span>
+                    </div>
+                    <div class="schedule-title">
+                        <h3>DFL in Mean-Variance Optimization</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                </div>
+                <div class="schedule-details">
+                    <div class="detail-content">
+                        <h4>Speaker: Junhyeong Lee</h4>
+                        <ul>
+                            <li><strong>Markowitz Framework Review:</strong> Mathematical formulation and parameter estimation techniques</li>
+                            <li><strong>[Hands-on Exercise]</strong> Complete DFL Pipeline Implementation:
+                                <ul class="sub-list">
+                                    <li>Neural network for return prediction</li>
+                                    <li>Differentiable optimization layer integration</li>
+                                    <li>End-to-end training loop implementation</li>
+                                    <li>Real-time experimentation with architectures</li>
+                                </ul>
+                            </li>
+                            <li><strong>PFL vs DFL Analysis:</strong> Live performance comparison with real market data, visualizing how DFL learns different prediction patterns</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="schedule-item">
-                <div class="schedule-time">Session 4</div>
-                <div class="schedule-content">
-                    <h3>Goal-Based Investment & Partial Index Tracking</h3>
-                    <p>Goal programming methodology, index replication with limited assets, hands-on implementation</p>
+                <div class="schedule-header" onclick="toggleSchedule(this)">
+                    <div class="schedule-time">
+                        <span class="time-duration">30 min</span>
+                        <span class="session-number">Session 4</span>
+                    </div>
+                    <div class="schedule-title">
+                        <h3>Goal-Based Investment & Partial Index Tracking</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                </div>
+                <div class="schedule-details">
+                    <div class="detail-content">
+                        <h4>Speaker: Hyunglip Bae</h4>
+                        <ul>
+                            <li><strong>Goal-Based Investment:</strong> Optimization formulation with priority constraints, goal programming methodology</li>
+                            <li><strong>Partial Index Tracking:</strong> Replicating benchmark performance with limited assets using semidefinite relaxation</li>
+                            <li><strong>[Hands-on Exercise]</strong> Advanced DFL Applications:
+                                <ul class="sub-list">
+                                    <li>Implementing DFL for goal-based portfolio optimization</li>
+                                    <li>Surrogate-model approach for handling gradient challenges</li>
+                                    <li>Extending DFL beyond classical MVO</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="schedule-item">
-                <div class="schedule-time">Session 5</div>
-                <div class="schedule-content">
-                    <h3>Closing Remarks</h3>
-                    <p>Open research challenges, future research directions, Q&A session</p>
+                <div class="schedule-header" onclick="toggleSchedule(this)">
+                    <div class="schedule-time">
+                        <span class="time-duration">10 min</span>
+                        <span class="session-number">Session 5</span>
+                    </div>
+                    <div class="schedule-title">
+                        <h3>Closing Remarks & Future Directions</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                </div>
+                <div class="schedule-details">
+                    <div class="detail-content">
+                        <h4>Speaker: Yongjae Lee</h4>
+                        <ul>
+                            <li>Open research challenges in decision-focused learning</li>
+                            <li>Emerging applications in financial AI</li>
+                            <li>Integration opportunities with existing financial systems</li>
+                            <li>Q&A session with all organizers</li>
+                            <li>Access to GitHub repository with code and datasets</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Speakers Section -->
-    <section id="speakers" class="container">
+    <!-- Organizers Section -->
+    <section id="organizers" class="container">
         <div class="section-header">
-            <div class="section-number">03</div>
+            <div class="section-number">02</div>
             <h2>Organizers</h2>
         </div>
         
@@ -1293,43 +1399,14 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>DFL @ ICAIF'25</h3>
-                <p style="color: var(--gray); margin-top: 1rem;">
-                    Decision-Focused Learning in Financial Optimization<br>
-                    A collaboration between UNIST and KAIST
-                </p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#overview">Overview</a></li>
-                    <li><a href="#topics">Topics</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#speakers">Speakers</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Tutorial Slides</a></li>
-                    <li><a href="#">Code Repository</a></li>
-                    <li><a href="#">Datasets</a></li>
-                    <li><a href="#">References</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="mailto:yongjaelee@unist.ac.kr">yongjaelee@unist.ac.kr</a></li>
-                    <li><a href="https://icaif25.org/registration/">ICAIF 2025</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            © 2025 Decision-Focused Learning Tutorial • ICAIF 2025 • Singapore
+    <footer style="padding: 2rem 4rem; background: var(--darker); border-top: 1px solid rgba(255,255,255,0.1);">
+        <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
+            <p style="color: var(--gray); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;">
+                © 2025 DFL @ ICAIF'25 • UNIST & KAIST • 
+                <a href="mailto:yongjaelee@unist.ac.kr" style="color: var(--gray); text-decoration: none;">yongjaelee@unist.ac.kr</a> • 
+                <a href="mailto:wkim@kaist.ac.kr" style="color: var(--gray); text-decoration: none;">wkim@kaist.ac.kr</a> • 
+                <a href="mailto:jun.lee@unist.ac.kr" style="color: var(--gray); text-decoration: none;">jun.lee@unist.ac.kr</a>
+            </p>
         </div>
     </footer>
 
@@ -1360,6 +1437,22 @@
                 navLinks.classList.remove('active');
             });
         });
+
+        // Schedule accordion toggle
+        function toggleSchedule(element) {
+            const scheduleItem = element.parentElement;
+            const allItems = document.querySelectorAll('.schedule-item');
+            
+            // Close other items
+            allItems.forEach(item => {
+                if (item !== scheduleItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            scheduleItem.classList.toggle('active');
+        }
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
