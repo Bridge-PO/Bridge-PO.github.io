@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<!-- Header Banner -->
+    <div class="header-banner" style="background: var(--red); color: white; padding: 0.75rem; text-align: center; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">
+        5th ACM International Conference on AI in Finance • 2025 • Singapore
+    </div><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -191,12 +194,39 @@
 
         .hero-title-line2 {
             display: block;
+            position: relative;
             color: transparent;
-            -webkit-text-stroke: 3px var(--white);
-            text-stroke: 3px var(--white);
+            -webkit-text-stroke: 4px var(--white);
+            text-stroke: 4px var(--white);
             -webkit-text-fill-color: transparent;
             paint-order: stroke fill;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.08em; /* I를 더 명확하게 보이도록 자간 증가 */
+        }
+        
+        .hero-title-line2::before {
+            content: 'LEARNING.';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            color: transparent;
+            -webkit-text-stroke: 4px rgba(255,255,255,0.4);
+            text-stroke: 4px rgba(255,255,255,0.4);
+            -webkit-text-fill-color: transparent;
+            z-index: -1;
+            letter-spacing: 0.08em;
+        }
+        
+        .hero-title-line2::after {
+            content: 'LEARNING.';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            color: transparent;
+            -webkit-text-stroke: 4px rgba(255,255,255,0.2);
+            text-stroke: 4px rgba(255,255,255,0.2);
+            -webkit-text-fill-color: transparent;
+            z-index: -2;
+            letter-spacing: 0.08em;
         }
 
         .hero-title-accent {
@@ -294,7 +324,7 @@
 
         .stat-number {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--red);
             line-height: 1;
         }
@@ -413,7 +443,7 @@
 
         .schedule-item {
             display: grid;
-            grid-template-columns: 150px 1fr 200px;
+            grid-template-columns: 150px 1fr;
             gap: 3rem;
             padding: 2rem 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -465,7 +495,7 @@
         .speaker-card {
             text-align: center;
             position: relative;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem 2rem;
             background: var(--darker);
             border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s;
@@ -478,17 +508,17 @@
         }
 
         .speaker-avatar {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             margin: 0 auto 1.5rem;
             background: linear-gradient(135deg, var(--red), var(--purple));
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--white);
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             position: relative;
             overflow: hidden;
         }
@@ -732,6 +762,11 @@
     </style>
 </head>
 <body>
+    <!-- Header Banner -->
+    <div style="background: var(--red); color: white; padding: 0.75rem; text-align: center; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Oswald', sans-serif;">
+        5th ACM International Conference on AI in Finance • 2025 • Singapore
+    </div>
+
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-content">
@@ -775,7 +810,7 @@
                 
                 <div class="stats-block">
                     <div class="stat-item">
-                        <div class="stat-number">DEC 14</div>
+                        <div class="stat-number">TBA</div>
                         <div class="stat-label">Tutorial Date</div>
                     </div>
                     <div class="stat-item">
@@ -783,8 +818,8 @@
                         <div class="stat-label">Duration</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Expert Speakers</div>
+                        <div class="stat-number">IN-PERSON</div>
+                        <div class="stat-label">Format</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">3 LABS</div>
@@ -854,49 +889,44 @@
         <div class="section-header">
             <div class="section-number">02</div>
             <h2>Tutorial Schedule</h2>
-            <p class="section-subtitle">2 Hours • 3 Hands-on Exercises • 5 Expert Speakers</p>
+            <p class="section-subtitle">2 Hours • 3 Hands-on Exercises • Interactive Sessions</p>
         </div>
         
         <div class="schedule-container">
             <div class="schedule-item">
-                <div class="schedule-time">14:00</div>
+                <div class="schedule-time">Session 1</div>
                 <div class="schedule-content">
                     <h3>Introduction & Motivation</h3>
                     <p>DFL vs PFL overview, financial applications motivation, key conceptual distinctions</p>
                 </div>
-                <div class="schedule-speaker">Yongjae Lee<br>(20 min)</div>
             </div>
             <div class="schedule-item">
-                <div class="schedule-time">14:20</div>
+                <div class="schedule-time">Session 2</div>
                 <div class="schedule-content">
                     <h3>Background in Decision-Focused Learning</h3>
                     <p>Theoretical considerations, backpropagation challenges, PyTorch hands-on with cvxpylayers</p>
                 </div>
-                <div class="schedule-speaker">Haeun Jeon<br>(30 min)</div>
             </div>
             <div class="schedule-item">
-                <div class="schedule-time">14:50</div>
+                <div class="schedule-time">Session 3</div>
                 <div class="schedule-content">
                     <h3>DFL in Mean-Variance Optimization</h3>
                     <p>Markowitz framework, complete pipeline implementation, PFL vs DFL comparison with real data</p>
                 </div>
-                <div class="schedule-speaker">Junhyeong Lee<br>(30 min)</div>
             </div>
             <div class="schedule-item">
-                <div class="schedule-time">15:20</div>
+                <div class="schedule-time">Session 4</div>
                 <div class="schedule-content">
                     <h3>Goal-Based Investment & Index Tracking</h3>
                     <p>Goal programming, partial index tracking, surrogate models for non-differentiable problems</p>
                 </div>
-                <div class="schedule-speaker">Hyunglip Bae<br>(30 min)</div>
             </div>
             <div class="schedule-item">
-                <div class="schedule-time">15:50</div>
+                <div class="schedule-time">Session 5</div>
                 <div class="schedule-content">
                     <h3>Closing Remarks</h3>
                     <p>Open research challenges, future research directions, Q&A session</p>
                 </div>
-                <div class="schedule-speaker">Yongjae Lee<br>(10 min)</div>
             </div>
         </div>
     </section>
@@ -905,8 +935,7 @@
     <section id="speakers" class="container">
         <div class="section-header">
             <div class="section-number">03</div>
-            <h2>Expert Instructors</h2>
-            <p class="section-subtitle">Leaders from UNIST & KAIST</p>
+            <h2>Organizers</h2>
         </div>
         
         <div class="speakers-grid">
@@ -990,12 +1019,12 @@
                 <div class="info-item">
                     <h3>Key Information</h3>
                     <ul>
-                        <li>Date: December 14, 2025</li>
-                        <li>Time: 14:00 - 16:00 (2 hours)</li>
+                        <li>Date: TBA</li>
+                        <li>Time: TBA</li>
                         <li>Format: In-person Tutorial</li>
-                        <li>Location: Vancouver, Canada</li>
-                        <li>Early Bird: October 31, 2025</li>
-                        <li>Registration: November 30, 2025</li>
+                        <li>Location: Singapore</li>
+                        <li>Conference: ICAIF 2025</li>
+                        <li>Duration: 2 Hours</li>
                     </ul>
                 </div>
             </div>
@@ -1052,7 +1081,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            © 2025 Decision-Focused Learning Tutorial • ICAIF 2025 • Vancouver, Canada
+            © 2025 Decision-Focused Learning Tutorial • ICAIF 2025 • Singapore
         </div>
     </footer>
 
