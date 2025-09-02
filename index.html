@@ -149,7 +149,7 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 50vw;
             font-weight: 900;
-            color: rgba(255, 255, 255, 0.02);
+            color: rgba(255, 255, 255, 0.04);
             letter-spacing: -0.05em;
             z-index: -1;
         }
@@ -481,6 +481,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
+            background: var(--black);
         }
         
         .speaker-avatar::before {
@@ -492,13 +493,13 @@
             bottom: -2px;
             background: linear-gradient(45deg, var(--red), var(--purple), var(--blue), var(--red));
             z-index: -1;
-            animation: gradientRotate 3s linear infinite;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s ease;
         }
         
         .speaker-card:hover .speaker-avatar::before {
             opacity: 1;
+            animation: gradientRotate 3s linear infinite;
         }
         
         @keyframes gradientRotate {
@@ -522,11 +523,11 @@
             position: absolute;
             top: 0;
             left: 0;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
         
         .speaker-card:hover .speaker-avatar img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .speaker-avatar .avatar-fallback {
@@ -612,7 +613,7 @@
             transform: translate(-50%, -50%);
             font-family: 'Bebas Neue', sans-serif;
             font-size: 20vw;
-            color: rgba(255,255,255,0.02);
+            color: rgba(255,255,255,0.04);
             letter-spacing: 0.1em;
             z-index: 0;
         }
@@ -803,7 +804,7 @@
                 
                 <div class="stats-block">
                     <div class="stat-item">
-                        <div class="stat-number">TBD</div>
+                        <div class="stat-number">TBA</div>
                         <div class="stat-label">Tutorial Date</div>
                     </div>
                     <div class="stat-item">
@@ -830,44 +831,44 @@
         <div class="topics-grid">
             <div class="topic-card">
                 <div class="topic-number">01</div>
-                <h3 class="topic-title">Theoretical Background</h3>
+                <h3 class="topic-title">DFL Foundations</h3>
                 <p class="topic-description">
-                    Mathematical foundations, gradient backpropagation through optimization layers, differentiable vs non-differentiable structures.
+                    Overview of the paradigm, mathematical underpinnings, and key conceptual distinctions from prediction-focused learning.
                 </p>
             </div>
             <div class="topic-card">
                 <div class="topic-number">02</div>
                 <h3 class="topic-title">PyTorch Implementation</h3>
                 <p class="topic-description">
-                    Hands-on coding with cvxpylayers for differentiable convex optimization in neural networks.
+                    Hands-on coding with cvxpylayers for differentiable convex optimization and gradient backpropagation in neural networks.
                 </p>
             </div>
             <div class="topic-card">
                 <div class="topic-number">03</div>
-                <h3 class="topic-title">Portfolio Optimization</h3>
+                <h3 class="topic-title">Mean-Variance Optimization</h3>
                 <p class="topic-description">
-                    Apply DFL to Markowitz mean-variance optimization with real market data experiments.
+                    Apply DFL to Markowitz portfolio optimization, comparing PFL vs DFL prediction models with real market data.
                 </p>
             </div>
             <div class="topic-card">
                 <div class="topic-number">04</div>
                 <h3 class="topic-title">Goal-Based Investment</h3>
                 <p class="topic-description">
-                    Personalized investment strategies with goal programming methodology and priority optimization.
+                    Personalized investment strategies incorporating goal programming methodology and priority optimization.
                 </p>
             </div>
             <div class="topic-card">
                 <div class="topic-number">05</div>
-                <h3 class="topic-title">Index Tracking</h3>
+                <h3 class="topic-title">Partial Index Tracking</h3>
                 <p class="topic-description">
-                    Partial index replication with limited assets using semidefinite relaxation techniques.
+                    Replicate benchmark performance with limited assets using semidefinite relaxation techniques.
                 </p>
             </div>
             <div class="topic-card">
                 <div class="topic-number">06</div>
-                <h3 class="topic-title">Surrogate Models</h3>
+                <h3 class="topic-title">Future Directions</h3>
                 <p class="topic-description">
-                    Addressing non-differentiable objectives and gradient challenges in complex financial problems.
+                    Open research challenges, emerging applications, and integration opportunities in financial AI.
                 </p>
             </div>
         </div>
@@ -906,8 +907,8 @@
             <div class="schedule-item">
                 <div class="schedule-time">Session 4</div>
                 <div class="schedule-content">
-                    <h3>Goal-Based Investment & Index Tracking</h3>
-                    <p>Goal programming, partial index tracking, surrogate models for non-differentiable problems</p>
+                    <h3>Goal-Based Investment & Partial Index Tracking</h3>
+                    <p>Goal programming methodology, index replication with limited assets, hands-on implementation</p>
                 </div>
             </div>
             <div class="schedule-item">
@@ -995,7 +996,6 @@
                     <ul>
                         <li>Basic Machine Learning</li>
                         <li>Python Programming</li>
-                        <li>Linear Algebra</li>
                         <li>Optimization Theory (helpful)</li>
                     </ul>
                 </div>
