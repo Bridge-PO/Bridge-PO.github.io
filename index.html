@@ -142,6 +142,36 @@
             width: 100%;
         }
 
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            margin: 6px 0;
+            transition: all 0.3s;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -257,6 +287,7 @@
             display: flex;
             gap: 2rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -494,7 +525,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
-            background: var(--black);
+            background: linear-gradient(135deg, rgba(255,0,64,0.2) 0%, rgba(128,0,255,0.2) 100%);
         }
         
         .speaker-avatar::before {
@@ -541,20 +572,6 @@
         
         .speaker-card:hover .speaker-avatar img {
             transform: scale(1.05);
-        }
-
-        .speaker-avatar .avatar-fallback {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--red), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            z-index: 1;
         }
 
         .speaker-name {
@@ -652,6 +669,14 @@
             letter-spacing: 0.1em;
         }
 
+        .cta-buttons {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
         /* Footer */
         footer {
             background: var(--darker);
@@ -709,7 +734,7 @@
             letter-spacing: 0.1em;
         }
 
-        /* Responsive */
+        /* Mobile Responsive Improvements */
         @media (max-width: 1024px) {
             .topics-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -718,41 +743,266 @@
             .speakers-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+
+            h1 {
+                font-size: clamp(4rem, 12vw, 10rem);
+            }
+
+            .section-number {
+                font-size: 6rem;
+            }
+
+            h2 {
+                font-size: 3rem;
+            }
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 4rem;
+            /* Navigation Mobile */
+            nav {
+                padding: 1rem 1.5rem;
             }
-            
+
+            nav.scrolled {
+                padding: 0.75rem 1.5rem;
+            }
+
+            .nav-logo {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--darker);
+                flex-direction: column;
+                padding: 5rem 2rem;
+                gap: 1.5rem;
+                transition: right 0.3s ease;
+                border-left: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+
+            /* Hero Mobile */
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+                min-height: 100vh;
+            }
+
+            h1 {
+                font-size: clamp(3rem, 20vw, 5rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-title-line2 {
+                -webkit-text-stroke: 1px var(--white);
+                text-stroke: 1px var(--white);
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                letter-spacing: 0.15em;
+                margin-bottom: 2rem;
+            }
+
             .hero-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 2rem;
             }
-            
-            .nav-links {
-                display: none;
+
+            .hero-description {
+                font-size: 1rem;
             }
-            
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                text-align: center;
+                font-size: 0.875rem;
+            }
+
+            .stats-block {
+                padding: 1.5rem;
+            }
+
+            .stat-item {
+                padding: 1rem 0;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            /* Sections Mobile */
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-number {
+                font-size: 4rem;
+                margin-bottom: -1rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            /* Topics Mobile */
             .topics-grid {
                 grid-template-columns: 1fr;
+                gap: 1px;
+                margin-top: 2rem;
             }
-            
+
+            .topic-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .topic-number {
+                font-size: 3rem;
+            }
+
+            .topic-title {
+                font-size: 1.25rem;
+            }
+
+            /* Schedule Mobile */
             .schedule-item {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+                padding: 1.5rem 0;
             }
-            
+
+            .schedule-item:hover {
+                padding-left: 1rem;
+            }
+
+            .schedule-time {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .schedule-content h3 {
+                font-size: 1.25rem;
+            }
+
+            /* Speakers Mobile */
             .speakers-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
-            
+
+            .speaker-card {
+                padding: 2rem 0.5rem 1.5rem;
+            }
+
+            .speaker-avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .speaker-name {
+                font-size: 1rem;
+            }
+
+            /* Info Section Mobile */
+            .info-section {
+                margin: 4rem 0;
+            }
+
             .info-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+                padding: 2rem 1.5rem;
             }
-            
+
+            .info-item h3 {
+                font-size: 1.25rem;
+            }
+
+            /* CTA Mobile */
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .cta-section::before {
+                font-size: 25vw;
+            }
+
+            .cta-title {
+                font-size: 3rem;
+            }
+
+            .cta-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            /* Footer Mobile */
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.5rem;
+            }
+
+            .footer-bottom {
+                margin-top: 2rem;
+                padding-top: 1.5rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small devices */
+            h1 {
+                font-size: clamp(2.5rem, 18vw, 4rem);
+            }
+
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .speaker-card {
+                padding: 2rem 1rem;
             }
         }
 
@@ -778,7 +1028,12 @@
     <nav id="navbar">
         <div class="nav-content">
             <div class="nav-logo">DFL × ICAIF'25</div>
-            <ul class="nav-links">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#topics">Topics</a></li>
                 <li><a href="#schedule">Schedule</a></li>
@@ -946,7 +1201,6 @@
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
                         <img src="images/yongjae-lee.jpg" alt="Yongjae Lee" onerror="this.style.display='none'">
-                        <span class="avatar-fallback">YL</span>
                     </div>
                 </div>
                 <h3 class="speaker-name">Yongjae Lee</h3>
@@ -956,7 +1210,6 @@
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
                         <img src="images/woochang-kim.jpg" alt="Woo Chang Kim" onerror="this.style.display='none'">
-                        <span class="avatar-fallback">WK</span>
                     </div>
                 </div>
                 <h3 class="speaker-name">Woo Chang Kim</h3>
@@ -966,7 +1219,6 @@
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
                         <img src="images/junhyeong-lee.jpg" alt="Junhyeong Lee" onerror="this.style.display='none'">
-                        <span class="avatar-fallback">JL</span>
                     </div>
                 </div>
                 <h3 class="speaker-name">Junhyeong Lee</h3>
@@ -976,7 +1228,6 @@
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
                         <img src="images/hyunglip-bae.jpg" alt="Hyunglip Bae" onerror="this.style.display='none'">
-                        <span class="avatar-fallback">HB</span>
                     </div>
                 </div>
                 <h3 class="speaker-name">Hyunglip Bae</h3>
@@ -986,7 +1237,6 @@
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
                         <img src="images/haeun-jeon.jpg" alt="Haeun Jeon" onerror="this.style.display='none'">
-                        <span class="avatar-fallback">HJ</span>
                     </div>
                 </div>
                 <h3 class="speaker-name">Haeun Jeon</h3>
@@ -1035,8 +1285,8 @@
         <div class="cta-content">
             <h2 class="cta-title">Ready to Transform Your Approach?</h2>
             <p class="cta-subtitle">Join Us at ICAIF 2025</p>
-            <div style="margin-top: 3rem;">
-                <a href="https://icaif25.org/registration/" class="btn btn-primary" style="margin-right: 2rem;">Register for ICAIF 2025</a>
+            <div class="cta-buttons">
+                <a href="https://icaif25.org/registration/" class="btn btn-primary">Register for ICAIF 2025</a>
                 <a href="#" class="btn btn-outline">Download Materials</a>
             </div>
         </div>
@@ -1095,6 +1345,23 @@
             }
         });
 
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1105,20 +1372,6 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                }
-            });
-        });
-
-        // Handle speaker image loading errors
-        document.querySelectorAll('.speaker-avatar img').forEach(img => {
-            img.addEventListener('error', function() {
-                this.style.display = 'none';
-            });
-            
-            img.addEventListener('load', function() {
-                const fallback = this.nextElementSibling;
-                if (fallback && fallback.classList.contains('avatar-fallback')) {
-                    fallback.style.display = 'none';
                 }
             });
         });
