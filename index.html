@@ -230,8 +230,8 @@
 
         h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(5rem, 15vw, 12rem);
-            line-height: 0.85;
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            line-height: 0.9;
             letter-spacing: -0.02em;
             text-transform: uppercase;
             margin-bottom: 2rem;
@@ -244,6 +244,11 @@
         }
 
         .hero-title-line2 {
+            display: block;
+            color: var(--white);
+        }
+
+        .hero-title-line3 {
             display: block;
             color: transparent;
             -webkit-text-stroke: 2px var(--white);
@@ -602,6 +607,12 @@
             margin-top: 4rem;
         }
 
+        .speaker-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .speaker-card {
             text-align: center;
             position: relative;
@@ -609,6 +620,7 @@
             background: var(--darker);
             border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .speaker-card:hover {
@@ -798,7 +810,13 @@
             }
 
             h1 {
-                font-size: clamp(4rem, 12vw, 10rem);
+                font-size: clamp(2.5rem, 8vw, 6rem);
+            }
+
+            .hero-title-line2,
+            .hero-title-line3 {
+                -webkit-text-stroke: 1px var(--white);
+                text-stroke: 1px var(--white);
             }
 
             .section-number {
@@ -855,11 +873,11 @@
             }
 
             h1 {
-                font-size: clamp(3rem, 20vw, 5rem);
+                font-size: clamp(2rem, 16vw, 3.5rem);
                 margin-bottom: 1.5rem;
             }
 
-            .hero-title-line2 {
+            .hero-title-line3 {
                 -webkit-text-stroke: 1px var(--white);
                 text-stroke: 1px var(--white);
             }
@@ -1049,7 +1067,7 @@
         @media (max-width: 480px) {
             /* Extra small devices */
             h1 {
-                font-size: clamp(2.5rem, 18vw, 4rem);
+                font-size: clamp(1.8rem, 14vw, 3rem);
             }
 
             .hero-badge {
@@ -1110,11 +1128,12 @@
             <div class="hero-badge">ICAIF 2025 TUTORIAL</div>
             
             <h1>
-                <span class="hero-title-line1">DECISION-FOCUSED</span>
-                <span class="hero-title-line2">LEARNING<span class="hero-title-accent">.</span></span>
+                <span class="hero-title-line1">DECISION-FOCUSED LEARNING</span>
+                <span class="hero-title-line2">IN FINANCIAL</span>
+                <span class="hero-title-line3">OPTIMIZATION<span class="hero-title-accent">.</span></span>
             </h1>
             
-            <p class="hero-subtitle">Bridging Prediction and Optimization in Financial Optimization</p>
+            <p class="hero-subtitle">Bridging Prediction and Optimization at ICAIF 2025</p>
             
             <div class="hero-grid">
                 <div class="hero-left">
@@ -1304,51 +1323,61 @@
         </div>
         
         <div class="speakers-grid">
-            <div class="speaker-card">
-                <div class="speaker-avatar">
-                    <div class="speaker-avatar-inner">
-                        <img src="images/yongjae-lee.jpg" alt="Yongjae Lee" onerror="this.style.display='none'">
+            <a href="https://www.linkedin.com/in/yongjae-lee-548982107" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
+                <div class="speaker-card">
+                    <div class="speaker-avatar">
+                        <div class="speaker-avatar-inner">
+                            <img src="images/yongjae-lee.jpg" alt="Yongjae Lee" onerror="this.style.display='none'">
+                        </div>
                     </div>
+                    <h3 class="speaker-name">Yongjae Lee</h3>
+                    <p class="speaker-affiliation">UNIST</p>
                 </div>
-                <h3 class="speaker-name">Yongjae Lee</h3>
-                <p class="speaker-affiliation">UNIST</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-avatar">
-                    <div class="speaker-avatar-inner">
-                        <img src="images/woochang-kim.jpg" alt="Woo Chang Kim" onerror="this.style.display='none'">
+            </a>
+            <a href="https://www.linkedin.com/in/woo-chang-kim-a7774810" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
+                <div class="speaker-card">
+                    <div class="speaker-avatar">
+                        <div class="speaker-avatar-inner">
+                            <img src="images/woochang-kim.jpg" alt="Woo Chang Kim" onerror="this.style.display='none'">
+                        </div>
                     </div>
+                    <h3 class="speaker-name">Woo Chang Kim</h3>
+                    <p class="speaker-affiliation">KAIST</p>
                 </div>
-                <h3 class="speaker-name">Woo Chang Kim</h3>
-                <p class="speaker-affiliation">KAIST</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-avatar">
-                    <div class="speaker-avatar-inner">
-                        <img src="images/junhyeong-lee.jpg" alt="Junhyeong Lee" onerror="this.style.display='none'">
+            </a>
+            <a href="https://www.linkedin.com/in/junhyeong-lee-137b56202" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
+                <div class="speaker-card">
+                    <div class="speaker-avatar">
+                        <div class="speaker-avatar-inner">
+                            <img src="images/junhyeong-lee.jpg" alt="Junhyeong Lee" onerror="this.style.display='none'">
+                        </div>
                     </div>
+                    <h3 class="speaker-name">Junhyeong Lee</h3>
+                    <p class="speaker-affiliation">UNIST</p>
                 </div>
-                <h3 class="speaker-name">Junhyeong Lee</h3>
-                <p class="speaker-affiliation">UNIST</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-avatar">
-                    <div class="speaker-avatar-inner">
-                        <img src="images/hyunglip-bae.jpg" alt="Hyunglip Bae" onerror="this.style.display='none'">
+            </a>
+            <a href="https://www.linkedin.com/in/hyunglip-bae-85981b278" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
+                <div class="speaker-card">
+                    <div class="speaker-avatar">
+                        <div class="speaker-avatar-inner">
+                            <img src="images/hyunglip-bae.jpg" alt="Hyunglip Bae" onerror="this.style.display='none'">
+                        </div>
                     </div>
+                    <h3 class="speaker-name">Hyunglip Bae</h3>
+                    <p class="speaker-affiliation">KAIST</p>
                 </div>
-                <h3 class="speaker-name">Hyunglip Bae</h3>
-                <p class="speaker-affiliation">KAIST</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-avatar">
-                    <div class="speaker-avatar-inner">
-                        <img src="images/haeun-jeon.jpg" alt="Haeun Jeon" onerror="this.style.display='none'">
+            </a>
+            <a href="https://www.linkedin.com/in/haeun-jeon-08a4a3292" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
+                <div class="speaker-card">
+                    <div class="speaker-avatar">
+                        <div class="speaker-avatar-inner">
+                            <img src="images/haeun-jeon.jpg" alt="Haeun Jeon" onerror="this.style.display='none'">
+                        </div>
                     </div>
+                    <h3 class="speaker-name">Haeun Jeon</h3>
+                    <p class="speaker-affiliation">KAIST</p>
                 </div>
-                <h3 class="speaker-name">Haeun Jeon</h3>
-                <p class="speaker-affiliation">KAIST</p>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -1403,7 +1432,7 @@
     <footer style="padding: 2rem 4rem; background: var(--darker); border-top: 1px solid rgba(255,255,255,0.1);">
         <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
             <p style="color: var(--gray); font-size: 0.875rem; letter-spacing: 0.1em;">
-                <span style="text-transform: uppercase;">© 2025 DFL @ ICAIF'25 • Contact: </span>
+                <span style="text-transform: uppercase;">© 2025 DFL @ ICAIF'25 • UNIST & KAIST • Contact: </span>
                 <a href="mailto:jun.lee@unist.ac.kr" style="color: var(--gray); text-decoration: none;">jun.lee@unist.ac.kr</a>
             </p>
         </div>
