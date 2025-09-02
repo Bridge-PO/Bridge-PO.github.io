@@ -192,43 +192,57 @@
         .hero-title-line2 {
             display: block;
             position: relative;
-            color: transparent;
-            -webkit-text-stroke: 1px var(--white);
-            text-stroke: 1px var(--white);
         }
         
-        .hero-title-line2 .stroke-layer-1,
-        .hero-title-line2 .stroke-layer-2,
-        .hero-title-line2 .stroke-layer-3,
-        .hero-title-line2 .stroke-layer-4 {
+        .hero-title-line2 .text-layers {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-title-line2 .text-layer {
             position: absolute;
             top: 0;
             left: 0;
             color: transparent;
+            -webkit-text-fill-color: transparent;
         }
         
-        .hero-title-line2 .stroke-layer-1 {
+        .hero-title-line2 .layer-5 {
+            -webkit-text-stroke: 10px rgba(255,255,255,0.2);
+            text-stroke: 10px rgba(255,255,255,0.2);
+            z-index: -5;
+        }
+        
+        .hero-title-line2 .layer-4 {
+            -webkit-text-stroke: 8px rgba(255,255,255,0.4);
+            text-stroke: 8px rgba(255,255,255,0.4);
+            z-index: -4;
+        }
+        
+        .hero-title-line2 .layer-3 {
+            -webkit-text-stroke: 6px rgba(255,255,255,0.6);
+            text-stroke: 6px rgba(255,255,255,0.6);
+            z-index: -3;
+        }
+        
+        .hero-title-line2 .layer-2 {
+            -webkit-text-stroke: 4px rgba(255,255,255,0.8);
+            text-stroke: 4px rgba(255,255,255,0.8);
+            z-index: -2;
+        }
+        
+        .hero-title-line2 .layer-1 {
             -webkit-text-stroke: 2px var(--white);
             text-stroke: 2px var(--white);
             z-index: -1;
         }
         
-        .hero-title-line2 .stroke-layer-2 {
-            -webkit-text-stroke: 3px var(--white);
-            text-stroke: 3px var(--white);
-            z-index: -2;
-        }
-        
-        .hero-title-line2 .stroke-layer-3 {
-            -webkit-text-stroke: 4px var(--white);
-            text-stroke: 4px var(--white);
-            z-index: -3;
-        }
-        
-        .hero-title-line2 .stroke-layer-4 {
-            -webkit-text-stroke: 5px var(--white);
-            text-stroke: 5px var(--white);
-            z-index: -4;
+        .hero-title-line2 .layer-main {
+            position: relative;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--white);
+            text-stroke: 1px var(--white);
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-title-accent {
@@ -510,20 +524,44 @@
         }
 
         .speaker-avatar {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto 1.5rem;
-            background: #1a1a1a;
-            border: 2px solid var(--red);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--white);
             position: relative;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .speaker-avatar::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--red), var(--purple), var(--blue), var(--red));
+            z-index: -1;
+            animation: gradientRotate 3s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .speaker-card:hover .speaker-avatar::before {
+            opacity: 1;
+        }
+        
+        @keyframes gradientRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .speaker-avatar-inner {
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
         }
 
         .speaker-avatar img {
@@ -533,15 +571,26 @@
             position: absolute;
             top: 0;
             left: 0;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+        
+        .speaker-card:hover .speaker-avatar img {
+            filter: grayscale(0%);
         }
 
         .speaker-avatar .avatar-fallback {
-            position: relative;
-            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
             background: linear-gradient(135deg, var(--red), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            z-index: 1;
         }
 
         .speaker-name {
@@ -784,11 +833,14 @@
             <h1>
                 <span class="hero-title-line1">DECISION-FOCUSED</span>
                 <span class="hero-title-line2">
-                    <span class="stroke-layer-4">LEARNING<span class="hero-title-accent">.</span></span>
-                    <span class="stroke-layer-3">LEARNING<span class="hero-title-accent">.</span></span>
-                    <span class="stroke-layer-2">LEARNING<span class="hero-title-accent">.</span></span>
-                    <span class="stroke-layer-1">LEARNING<span class="hero-title-accent">.</span></span>
-                    LEARNING<span class="hero-title-accent">.</span>
+                    <span class="text-layers">
+                        <span class="text-layer layer-5">LEARNING<span class="hero-title-accent">.</span></span>
+                        <span class="text-layer layer-4">LEARNING<span class="hero-title-accent">.</span></span>
+                        <span class="text-layer layer-3">LEARNING<span class="hero-title-accent">.</span></span>
+                        <span class="text-layer layer-2">LEARNING<span class="hero-title-accent">.</span></span>
+                        <span class="text-layer layer-1">LEARNING<span class="hero-title-accent">.</span></span>
+                        <span class="layer-main">LEARNING<span class="hero-title-accent">.</span></span>
+                    </span>
                 </span>
             </h1>
             
@@ -941,45 +993,55 @@
         <div class="speakers-grid">
             <div class="speaker-card">
                 <div class="speaker-avatar">
-                    <!-- 이미지 파일명: yongjae-lee.jpg -->
-                    <img src="images/yongjae-lee.jpg" alt="Yongjae Lee" onerror="this.style.display='none'">
-                    <span class="avatar-fallback">YL</span>
+                    <div class="speaker-avatar-inner">
+                        <!-- 이미지 파일명: yongjae-lee.jpg -->
+                        <img src="images/yongjae-lee.jpg" alt="Yongjae Lee" onerror="this.style.display='none'">
+                        <span class="avatar-fallback">YL</span>
+                    </div>
                 </div>
                 <h3 class="speaker-name">Yongjae Lee</h3>
                 <p class="speaker-affiliation">UNIST</p>
             </div>
             <div class="speaker-card">
                 <div class="speaker-avatar">
-                    <!-- 이미지 파일명: woochang-kim.jpg -->
-                    <img src="images/woochang-kim.jpg" alt="Woo Chang Kim" onerror="this.style.display='none'">
-                    <span class="avatar-fallback">WK</span>
+                    <div class="speaker-avatar-inner">
+                        <!-- 이미지 파일명: woochang-kim.jpg -->
+                        <img src="images/woochang-kim.jpg" alt="Woo Chang Kim" onerror="this.style.display='none'">
+                        <span class="avatar-fallback">WK</span>
+                    </div>
                 </div>
                 <h3 class="speaker-name">Woo Chang Kim</h3>
                 <p class="speaker-affiliation">KAIST</p>
             </div>
             <div class="speaker-card">
                 <div class="speaker-avatar">
-                    <!-- 이미지 파일명: junhyeong-lee.jpg -->
-                    <img src="images/junhyeong-lee.jpg" alt="Junhyeong Lee" onerror="this.style.display='none'">
-                    <span class="avatar-fallback">JL</span>
+                    <div class="speaker-avatar-inner">
+                        <!-- 이미지 파일명: junhyeong-lee.jpg -->
+                        <img src="images/junhyeong-lee.jpg" alt="Junhyeong Lee" onerror="this.style.display='none'">
+                        <span class="avatar-fallback">JL</span>
+                    </div>
                 </div>
                 <h3 class="speaker-name">Junhyeong Lee</h3>
                 <p class="speaker-affiliation">UNIST</p>
             </div>
             <div class="speaker-card">
                 <div class="speaker-avatar">
-                    <!-- 이미지 파일명: hyunglip-bae.jpg -->
-                    <img src="images/hyunglip-bae.jpg" alt="Hyunglip Bae" onerror="this.style.display='none'">
-                    <span class="avatar-fallback">HB</span>
+                    <div class="speaker-avatar-inner">
+                        <!-- 이미지 파일명: hyunglip-bae.jpg -->
+                        <img src="images/hyunglip-bae.jpg" alt="Hyunglip Bae" onerror="this.style.display='none'">
+                        <span class="avatar-fallback">HB</span>
+                    </div>
                 </div>
                 <h3 class="speaker-name">Hyunglip Bae</h3>
                 <p class="speaker-affiliation">KAIST</p>
             </div>
             <div class="speaker-card">
                 <div class="speaker-avatar">
-                    <!-- 이미지 파일명: haeun-jeon.jpg -->
-                    <img src="images/haeun-jeon.jpg" alt="Haeun Jeon" onerror="this.style.display='none'">
-                    <span class="avatar-fallback">HJ</span>
+                    <div class="speaker-avatar-inner">
+                        <!-- 이미지 파일명: haeun-jeon.jpg -->
+                        <img src="images/haeun-jeon.jpg" alt="Haeun Jeon" onerror="this.style.display='none'">
+                        <span class="avatar-fallback">HJ</span>
+                    </div>
                 </div>
                 <h3 class="speaker-name">Haeun Jeon</h3>
                 <p class="speaker-affiliation">KAIST</p>
