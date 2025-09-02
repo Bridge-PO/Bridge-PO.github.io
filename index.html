@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DFL @ ICAIF 2025 | Decision-Focused Learning</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bridge-po.github.io/">
+    <meta property="og:title" content="Decision-Focused Learning @ ICAIF 2025">
+    <meta property="og:description" content="Tutorial on bridging prediction and optimization in financial markets. Learn how DFL aligns ML training with decision quality at ICAIF 2025, Singapore.">
+    <meta property="og:image" content="https://bridge-po.github.io/images/dfl-og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Decision-Focused Learning Tutorial at ICAIF 2025">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bridge-po.github.io/">
+    <meta property="twitter:title" content="Decision-Focused Learning @ ICAIF 2025">
+    <meta property="twitter:description" content="Tutorial on bridging prediction and optimization in financial markets.">
+    <meta property="twitter:image" content="https://bridge-po.github.io/images/dfl-og-image.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="Decision-Focused Learning tutorial at ICAIF 2025. Learn to align machine learning with financial decision quality through hands-on PyTorch exercises.">
+    <meta name="keywords" content="Decision-Focused Learning, DFL, ICAIF 2025, Financial Optimization, Machine Learning, Portfolio Optimization">
+    <meta name="author" content="UNIST & KAIST">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -439,16 +462,6 @@
 
         .schedule-content p {
             color: var(--gray);
-        }
-
-        .schedule-speaker {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--gray);
-            align-self: center;
-            text-align: right;
-            line-height: 1.4;
         }
 
         /* Speakers */
@@ -932,7 +945,6 @@
             <div class="speaker-card">
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
-                        <!-- 이미지 파일명: yongjae-lee.jpg -->
                         <img src="images/yongjae-lee.jpg" alt="Yongjae Lee" onerror="this.style.display='none'">
                         <span class="avatar-fallback">YL</span>
                     </div>
@@ -943,7 +955,6 @@
             <div class="speaker-card">
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
-                        <!-- 이미지 파일명: woochang-kim.jpg -->
                         <img src="images/woochang-kim.jpg" alt="Woo Chang Kim" onerror="this.style.display='none'">
                         <span class="avatar-fallback">WK</span>
                     </div>
@@ -954,7 +965,6 @@
             <div class="speaker-card">
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
-                        <!-- 이미지 파일명: junhyeong-lee.jpg -->
                         <img src="images/junhyeong-lee.jpg" alt="Junhyeong Lee" onerror="this.style.display='none'">
                         <span class="avatar-fallback">JL</span>
                     </div>
@@ -965,7 +975,6 @@
             <div class="speaker-card">
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
-                        <!-- 이미지 파일명: hyunglip-bae.jpg -->
                         <img src="images/hyunglip-bae.jpg" alt="Hyunglip Bae" onerror="this.style.display='none'">
                         <span class="avatar-fallback">HB</span>
                     </div>
@@ -976,7 +985,6 @@
             <div class="speaker-card">
                 <div class="speaker-avatar">
                     <div class="speaker-avatar-inner">
-                        <!-- 이미지 파일명: haeun-jeon.jpg -->
                         <img src="images/haeun-jeon.jpg" alt="Haeun Jeon" onerror="this.style.display='none'">
                         <span class="avatar-fallback">HJ</span>
                     </div>
@@ -1105,11 +1113,9 @@
         document.querySelectorAll('.speaker-avatar img').forEach(img => {
             img.addEventListener('error', function() {
                 this.style.display = 'none';
-                // Fallback text will be shown automatically
             });
             
             img.addEventListener('load', function() {
-                // Hide the fallback text when image loads successfully
                 const fallback = this.nextElementSibling;
                 if (fallback && fallback.classList.contains('avatar-fallback')) {
                     fallback.style.display = 'none';
