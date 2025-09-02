@@ -1,7 +1,4 @@
-<!-- Header Banner -->
-    <div class="header-banner" style="background: var(--red); color: white; padding: 0.75rem; text-align: center; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">
-        5th ACM International Conference on AI in Finance • 2025 • Singapore
-    </div><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -194,39 +191,9 @@
 
         .hero-title-line2 {
             display: block;
-            position: relative;
             color: transparent;
-            -webkit-text-stroke: 4px var(--white);
-            text-stroke: 4px var(--white);
-            -webkit-text-fill-color: transparent;
-            paint-order: stroke fill;
-            letter-spacing: 0.08em; /* I를 더 명확하게 보이도록 자간 증가 */
-        }
-        
-        .hero-title-line2::before {
-            content: 'LEARNING.';
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            color: transparent;
-            -webkit-text-stroke: 4px rgba(255,255,255,0.4);
-            text-stroke: 4px rgba(255,255,255,0.4);
-            -webkit-text-fill-color: transparent;
-            z-index: -1;
-            letter-spacing: 0.08em;
-        }
-        
-        .hero-title-line2::after {
-            content: 'LEARNING.';
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            color: transparent;
-            -webkit-text-stroke: 4px rgba(255,255,255,0.2);
-            text-stroke: 4px rgba(255,255,255,0.2);
-            -webkit-text-fill-color: transparent;
-            z-index: -2;
-            letter-spacing: 0.08em;
+            -webkit-text-stroke: 2px var(--white);
+            text-stroke: 2px var(--white);
         }
 
         .hero-title-accent {
@@ -508,15 +475,15 @@
         }
 
         .speaker-avatar {
-            width: 150px;
-            height: 150px;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 1.5rem;
             background: linear-gradient(135deg, var(--red), var(--purple));
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
+            font-size: 2rem;
             color: var(--white);
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             position: relative;
@@ -543,14 +510,6 @@
             font-weight: 600;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
-        }
-
-        .speaker-role {
-            color: var(--red);
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         .speaker-affiliation {
@@ -762,11 +721,6 @@
     </style>
 </head>
 <body>
-    <!-- Header Banner -->
-    <div style="background: var(--red); color: white; padding: 0.75rem; text-align: center; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Oswald', sans-serif;">
-        5th ACM International Conference on AI in Finance • 2025 • Singapore
-    </div>
-
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-content">
@@ -946,7 +900,6 @@
                     <span class="avatar-fallback">YL</span>
                 </div>
                 <h3 class="speaker-name">Yongjae Lee</h3>
-                <p class="speaker-role">Lead Organizer</p>
                 <p class="speaker-affiliation">UNIST</p>
             </div>
             <div class="speaker-card">
@@ -956,7 +909,6 @@
                     <span class="avatar-fallback">WK</span>
                 </div>
                 <h3 class="speaker-name">Woo Chang Kim</h3>
-                <p class="speaker-role">Co-Organizer</p>
                 <p class="speaker-affiliation">KAIST</p>
             </div>
             <div class="speaker-card">
@@ -966,7 +918,6 @@
                     <span class="avatar-fallback">JL</span>
                 </div>
                 <h3 class="speaker-name">Junhyeong Lee</h3>
-                <p class="speaker-role">Instructor</p>
                 <p class="speaker-affiliation">UNIST</p>
             </div>
             <div class="speaker-card">
@@ -976,7 +927,6 @@
                     <span class="avatar-fallback">HB</span>
                 </div>
                 <h3 class="speaker-name">Hyunglip Bae</h3>
-                <p class="speaker-role">Instructor</p>
                 <p class="speaker-affiliation">KAIST</p>
             </div>
             <div class="speaker-card">
@@ -986,7 +936,6 @@
                     <span class="avatar-fallback">HJ</span>
                 </div>
                 <h3 class="speaker-name">Haeun Jeon</h3>
-                <p class="speaker-role">Instructor</p>
                 <p class="speaker-affiliation">KAIST</p>
             </div>
         </div>
