@@ -245,13 +245,13 @@
 
         .hero-title-line2 {
             display: block;
-            color: transparent;
-            -webkit-text-stroke: 2px var(--white);
-            text-stroke: 2px var(--white);
         }
 
-        .hero-title-line3 {
-            display: block;
+        .hero-title-in {
+            color: var(--white);
+        }
+
+        .hero-title-outline {
             color: transparent;
             -webkit-text-stroke: 2px var(--white);
             text-stroke: 2px var(--white);
@@ -815,8 +815,7 @@
                 font-size: clamp(2.5rem, 8vw, 6rem);
             }
 
-            .hero-title-line2,
-            .hero-title-line3 {
+            .hero-title-outline {
                 -webkit-text-stroke: 1px var(--white);
                 text-stroke: 1px var(--white);
             }
@@ -879,7 +878,7 @@
                 margin-bottom: 1.5rem;
             }
 
-            .hero-title-line3 {
+            .hero-title-outline {
                 -webkit-text-stroke: 1px var(--white);
                 text-stroke: 1px var(--white);
             }
@@ -1131,8 +1130,9 @@
             
             <h1>
                 <span class="hero-title-line1">DECISION-FOCUSED LEARNING</span>
-                <span class="hero-title-line2">IN FINANCIAL</span>
-                <span class="hero-title-line3">OPTIMIZATION<span class="hero-title-accent">.</span></span>
+                <span class="hero-title-line2">
+                    <span class="hero-title-in">IN </span><span class="hero-title-outline">FINANCIAL OPTIMIZATION</span><span class="hero-title-accent">.</span>
+                </span>
             </h1>
             
             <p class="hero-subtitle">Bridging Prediction and Optimization at ICAIF 2025</p>
