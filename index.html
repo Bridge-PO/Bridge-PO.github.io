@@ -4,29 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DFL @ ICAIF 2025 | Decision-Focused Learning</title>
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bridge-po.github.io/">
-    <meta property="og:title" content="Decision-Focused Learning @ ICAIF 2025">
-    <meta property="og:description" content="Tutorial on bridging prediction and optimization in financial markets. Learn how DFL aligns ML training with decision quality at ICAIF 2025, Singapore.">
-    <meta property="og:image" content="https://bridge-po.github.io/images/dfl-og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Decision-Focused Learning Tutorial at ICAIF 2025">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://bridge-po.github.io/">
-    <meta property="twitter:title" content="Decision-Focused Learning @ ICAIF 2025">
-    <meta property="twitter:description" content="Tutorial on bridging prediction and optimization in financial markets.">
-    <meta property="twitter:image" content="https://bridge-po.github.io/images/dfl-og-image.jpg">
-    
-    <!-- Additional Meta Tags -->
-    <meta name="description" content="Decision-Focused Learning tutorial at ICAIF 2025. Learn to align machine learning with financial decision quality through hands-on PyTorch exercises.">
-    <meta name="keywords" content="Decision-Focused Learning, DFL, ICAIF 2025, Financial Optimization, Machine Learning, Portfolio Optimization">
-    <meta name="author" content="UNIST & KAIST">
-    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -47,7 +24,6 @@
             --yellow: #ffcc00;
             --blue: #0080ff;
             --purple: #8000ff;
-            --cyan: #00ffcc;
         }
 
         body {
@@ -143,36 +119,6 @@
             width: 100%;
         }
 
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 28px;
-            height: 2px;
-            background: var(--white);
-            margin: 6px 0;
-            transition: all 0.3s;
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -203,7 +149,7 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 50vw;
             font-weight: 900;
-            color: rgba(255, 255, 255, 0.04);
+            color: rgba(255, 255, 255, 0.02);
             letter-spacing: -0.05em;
             z-index: -1;
         }
@@ -230,12 +176,11 @@
 
         h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3.5rem, 10vw, 8rem);
-            line-height: 0.9;
+            font-size: clamp(5rem, 15vw, 12rem);
+            line-height: 0.85;
             letter-spacing: -0.02em;
             text-transform: uppercase;
             margin-bottom: 2rem;
-            font-weight: 400;
         }
 
         .hero-title-line1 {
@@ -244,11 +189,6 @@
         }
 
         .hero-title-line2 {
-            display: block;
-            color: var(--white);
-        }
-
-        .hero-title-line3 {
             display: block;
             color: transparent;
             -webkit-text-stroke: 2px var(--white);
@@ -293,7 +233,6 @@
             display: flex;
             gap: 2rem;
             margin-top: 2rem;
-            flex-wrap: wrap;
         }
 
         .btn {
@@ -351,7 +290,7 @@
 
         .stat-number {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--red);
             line-height: 1;
         }
@@ -383,7 +322,7 @@
         .section-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 8rem;
-            color: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.05);
             line-height: 1;
             margin-bottom: -2rem;
         }
@@ -444,7 +383,7 @@
         .topic-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 4rem;
-            color: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.1);
             line-height: 1;
             margin-bottom: 1rem;
         }
@@ -469,134 +408,45 @@
         }
 
         .schedule-item {
-            margin-bottom: 1px;
-            background: var(--darker);
-            border: 1px solid rgba(255,255,255,0.1);
-            overflow: hidden;
+            display: grid;
+            grid-template-columns: 150px 1fr 200px;
+            gap: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s;
         }
 
         .schedule-item:hover {
-            border-color: var(--red);
-        }
-
-        .schedule-header {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 3rem;
-            padding: 2rem;
-            cursor: pointer;
-            user-select: none;
-            transition: all 0.3s;
-        }
-
-        .schedule-header:hover {
+            padding-left: 2rem;
+            border-left: 4px solid var(--red);
             background: linear-gradient(90deg, rgba(255,0,64,0.1) 0%, transparent 50%);
         }
 
         .schedule-time {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .time-duration {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--red);
-            line-height: 1;
         }
 
-        .session-number {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--gray);
-            font-size: 0.875rem;
-        }
-
-        .schedule-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .schedule-title h3 {
+        .schedule-content h3 {
             font-family: 'Oswald', sans-serif;
             font-size: 1.5rem;
             font-weight: 600;
             text-transform: uppercase;
-            margin: 0;
+            margin-bottom: 0.5rem;
         }
 
-        .toggle-icon {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: var(--red);
-            transition: transform 0.3s;
-        }
-
-        .schedule-item.active .toggle-icon {
-            transform: rotate(45deg);
-        }
-
-        .schedule-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-            background: var(--black);
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .schedule-item.active .schedule-details {
-            max-height: 600px;
-        }
-
-        .detail-content {
-            padding: 2rem 3rem;
-        }
-
-        .detail-content h4 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--cyan);
-            margin-bottom: 1.5rem;
-            font-size: 0.875rem;
-        }
-
-        .detail-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .detail-content li {
-            color: var(--light-gray);
-            line-height: 1.8;
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .detail-content li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--red);
-        }
-
-        .detail-content .sub-list {
-            margin-top: 0.5rem;
-            padding-left: 1rem;
-        }
-
-        .detail-content .sub-list li::before {
-            content: '•';
+        .schedule-content p {
             color: var(--gray);
         }
 
-        .detail-content strong {
-            color: var(--white);
+        .schedule-speaker {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray);
+            align-self: center;
+            text-align: right;
         }
 
         /* Speakers */
@@ -607,20 +457,13 @@
             margin-top: 4rem;
         }
 
-        .speaker-card-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
         .speaker-card {
             text-align: center;
             position: relative;
-            padding: 3rem 1rem 2rem;
+            padding: 2rem 1rem;
             background: var(--darker);
             border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s;
-            cursor: pointer;
         }
 
         .speaker-card:hover {
@@ -630,59 +473,17 @@
         }
 
         .speaker-avatar {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             margin: 0 auto 1.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: linear-gradient(135deg, rgba(255,0,64,0.2) 0%, rgba(128,0,255,0.2) 100%);
-        }
-        
-        .speaker-avatar::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--red), var(--purple), var(--blue), var(--red));
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .speaker-card:hover .speaker-avatar::before {
-            opacity: 1;
-            animation: gradientRotate 3s linear infinite;
-        }
-        
-        @keyframes gradientRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .speaker-avatar-inner {
-            width: 100%;
-            height: 100%;
-            background: var(--black);
-            position: relative;
-            overflow: hidden;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        }
-
-        .speaker-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: transform 0.3s ease;
-        }
-        
-        .speaker-card:hover .speaker-avatar img {
-            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--red), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--white);
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
         }
 
         .speaker-name {
@@ -691,6 +492,14 @@
             font-weight: 600;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
+        }
+
+        .speaker-role {
+            color: var(--red);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .speaker-affiliation {
@@ -754,7 +563,7 @@
             transform: translate(-50%, -50%);
             font-family: 'Bebas Neue', sans-serif;
             font-size: 20vw;
-            color: rgba(255,255,255,0.04);
+            color: rgba(255,255,255,0.02);
             letter-spacing: 0.1em;
             z-index: 0;
         }
@@ -780,26 +589,64 @@
             letter-spacing: 0.1em;
         }
 
-        .cta-buttons {
-            margin-top: 3rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
         /* Footer */
         footer {
             background: var(--darker);
-            padding: 2rem 4rem;
+            padding: 4rem;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        footer a:hover {
-            color: var(--white) !important;
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
         }
 
-        /* Mobile Responsive Improvements */
+        .footer-brand h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .footer-links h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            color: var(--red);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
             .topics-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -808,280 +655,41 @@
             .speakers-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-
-            h1 {
-                font-size: clamp(2.5rem, 8vw, 6rem);
-            }
-
-            .hero-title-line2,
-            .hero-title-line3 {
-                -webkit-text-stroke: 1px var(--white);
-                text-stroke: 1px var(--white);
-            }
-
-            .section-number {
-                font-size: 6rem;
-            }
-
-            h2 {
-                font-size: 3rem;
-            }
         }
 
         @media (max-width: 768px) {
-            /* Navigation Mobile */
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            nav.scrolled {
-                padding: 0.75rem 1.5rem;
-            }
-
-            .nav-logo {
-                font-size: 1.25rem;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: var(--darker);
-                flex-direction: column;
-                padding: 5rem 2rem;
-                gap: 1.5rem;
-                transition: right 0.3s ease;
-                border-left: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-                z-index: 1001;
-            }
-
-            /* Hero Mobile */
-            .hero {
-                padding: 6rem 1.5rem 3rem;
-                min-height: 100vh;
-            }
-
             h1 {
-                font-size: clamp(2rem, 16vw, 3.5rem);
-                margin-bottom: 1.5rem;
+                font-size: 4rem;
             }
-
-            .hero-title-line3 {
-                -webkit-text-stroke: 1px var(--white);
-                text-stroke: 1px var(--white);
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-                letter-spacing: 0.15em;
-                margin-bottom: 2rem;
-            }
-
+            
             .hero-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-                margin-top: 2rem;
             }
-
-            .hero-description {
-                font-size: 1rem;
+            
+            .nav-links {
+                display: none;
             }
-
-            .hero-cta {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 1rem;
-            }
-
-            .btn {
-                padding: 1rem 2rem;
-                text-align: center;
-                font-size: 0.875rem;
-            }
-
-            .stats-block {
-                padding: 1.5rem;
-            }
-
-            .stat-item {
-                padding: 1rem 0;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            /* Sections Mobile */
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .section-number {
-                font-size: 4rem;
-                margin-bottom: -1rem;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            .section-subtitle {
-                font-size: 1rem;
-            }
-
-            /* Topics Mobile */
+            
             .topics-grid {
                 grid-template-columns: 1fr;
-                gap: 1px;
-                margin-top: 2rem;
             }
-
-            .topic-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .topic-number {
-                font-size: 3rem;
-            }
-
-            .topic-title {
-                font-size: 1.25rem;
-            }
-
-            /* Schedule Mobile */
-            .schedule-header {
+            
+            .schedule-item {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-                padding: 1.5rem;
             }
-
-            .schedule-time {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .time-duration {
-                font-size: 1.5rem;
-            }
-
-            .schedule-title {
-                margin-top: 0.5rem;
-            }
-
-            .schedule-title h3 {
-                font-size: 1.125rem;
-            }
-
-            .detail-content {
-                padding: 1.5rem;
-            }
-
-            .schedule-item.active .schedule-details {
-                max-height: 800px;
-            }
-
-            /* Speakers Mobile */
+            
             .speakers-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
             }
-
-            .speaker-card {
-                padding: 2rem 0.5rem 1.5rem;
-            }
-
-            .speaker-avatar {
-                width: 100px;
-                height: 100px;
-            }
-
-            .speaker-name {
-                font-size: 1rem;
-            }
-
-            /* Info Section Mobile */
-            .info-section {
-                margin: 4rem 0;
-            }
-
+            
             .info-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-                padding: 2rem 1.5rem;
             }
-
-            .info-item h3 {
-                font-size: 1.25rem;
-            }
-
-            /* CTA Mobile */
-            .cta-section {
-                padding: 4rem 1.5rem;
-            }
-
-            .cta-section::before {
-                font-size: 25vw;
-            }
-
-            .cta-title {
-                font-size: 3rem;
-            }
-
-            .cta-subtitle {
-                font-size: 1.125rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            /* Footer Mobile */
-            footer {
-                padding: 1.5rem;
-            }
-
-            footer p {
-                font-size: 0.75rem !important;
-                line-height: 1.8;
-            }
-
-            footer a {
-                display: inline-block;
-                margin: 0.25rem 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            /* Extra small devices */
-            h1 {
-                font-size: clamp(1.8rem, 14vw, 3rem);
-            }
-
-            .hero-badge {
-                font-size: 0.75rem;
-                padding: 0.5rem 1rem;
-                margin-bottom: 2rem;
-            }
-
-            .speakers-grid {
+            
+            .footer-content {
                 grid-template-columns: 1fr;
-            }
-
-            .speaker-card {
-                padding: 2rem 1rem;
             }
         }
 
@@ -1107,40 +715,35 @@
     <nav id="navbar">
         <div class="nav-content">
             <div class="nav-logo">DFL × ICAIF'25</div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="#overview">Overview</a></li>
+                <li><a href="#topics">Topics</a></li>
                 <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#organizers">Organizers</a></li>
+                <li><a href="#speakers">Speakers</a></li>
                 <li><a href="#register">Register</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Overview Section -->
-    <section id="overview" class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
             <div class="hero-badge">ICAIF 2025 TUTORIAL</div>
             
             <h1>
-                <span class="hero-title-line1">DECISION-FOCUSED LEARNING</span>
-                <span class="hero-title-line2">IN FINANCIAL</span>
-                <span class="hero-title-line3">OPTIMIZATION<span class="hero-title-accent">.</span></span>
+                <span class="hero-title-line1">DECISION-FOCUSED</span>
+                <span class="hero-title-line2">LEARNING<span class="hero-title-accent">.</span></span>
             </h1>
             
-            <p class="hero-subtitle">Bridging Prediction and Optimization at ICAIF 2025</p>
+            <p class="hero-subtitle"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; font-weight: 400;">Financial Optimization</span> Through End-to-End Learning</p>
             
             <div class="hero-grid">
                 <div class="hero-left">
                     <p class="hero-description">
-                        Learn how Decision-Focused Learning directly aligns machine learning training objectives 
-                        with the quality of downstream decisions. Through hands-on exercises with PyTorch and cvxpylayers, 
-                        practice the techniques that achieve superior financial decisions.
+                        A paradigm shift in machine learning for optimization. Learn how to align ML objectives 
+                        directly with decision quality, not just prediction accuracy. Master the techniques that 
+                        are revolutionizing portfolio optimization and financial decision-making.
                     </p>
                     
                     <div class="hero-cta">
@@ -1151,7 +754,7 @@
                 
                 <div class="stats-block">
                     <div class="stat-item">
-                        <div class="stat-number">TBD</div>
+                        <div class="stat-number">DEC 14</div>
                         <div class="stat-label">Tutorial Date</div>
                     </div>
                     <div class="stat-item">
@@ -1159,10 +762,68 @@
                         <div class="stat-label">Duration</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">IN-PERSON</div>
-                        <div class="stat-label">Format</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Expert Speakers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Hands-on Labs</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section id="topics" class="container">
+        <div class="section-header">
+            <div class="section-number">01</div>
+            <h2>What You'll Master</h2>
+            <p class="section-subtitle">Six Core Topics in Decision-Focused Learning</p>
+        </div>
+        
+        <div class="topics-grid">
+            <div class="topic-card">
+                <div class="topic-number">01</div>
+                <h3 class="topic-title">DFL Foundations</h3>
+                <p class="topic-description">
+                    Mathematical framework, gradient flow through optimization layers, and theoretical underpinnings.
+                </p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">02</div>
+                <h3 class="topic-title">PyTorch Implementation</h3>
+                <p class="topic-description">
+                    Hands-on coding with cvxpylayers for differentiable convex optimization in neural networks.
+                </p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">03</div>
+                <h3 class="topic-title">Portfolio Optimization</h3>
+                <p class="topic-description">
+                    Apply DFL to Markowitz mean-variance optimization with real market data experiments.
+                </p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">04</div>
+                <h3 class="topic-title">Goal-Based Investment</h3>
+                <p class="topic-description">
+                    Extension to personalized investment strategies with multiple objectives and constraints.
+                </p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">05</div>
+                <h3 class="topic-title">Index Tracking</h3>
+                <p class="topic-description">
+                    Cardinality-constrained optimization and semidefinite relaxation techniques.
+                </p>
+            </div>
+            <div class="topic-card">
+                <div class="topic-number">06</div>
+                <h3 class="topic-title">Future Directions</h3>
+                <p class="topic-description">
+                    Open research challenges and integration with reinforcement learning approaches.
+                </p>
             </div>
         </div>
     </section>
@@ -1170,214 +831,94 @@
     <!-- Schedule Section -->
     <section id="schedule" class="container">
         <div class="section-header">
-            <div class="section-number">01</div>
+            <div class="section-number">02</div>
             <h2>Tutorial Schedule</h2>
-            <p class="section-subtitle">2 Hours • 3 Hands-on Exercises • Interactive Sessions</p>
+            <p class="section-subtitle">Two Hours of Intensive Learning</p>
         </div>
         
         <div class="schedule-container">
             <div class="schedule-item">
-                <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">20 min</span>
-                        <span class="session-number">Session 1</span>
-                    </div>
-                    <div class="schedule-title">
-                        <h3>Introduction & Motivation</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
+                <div class="schedule-time">14:00</div>
+                <div class="schedule-content">
+                    <h3>Introduction & Motivation</h3>
+                    <p>Overview of DFL paradigm and motivation in financial contexts</p>
                 </div>
-                <div class="schedule-details">
-                    <div class="detail-content">
-                        <h4>Speaker: Yongjae Lee</h4>
-                        <ul>
-                            <li>Overview of Decision-Focused Learning (DFL) vs. Prediction-Focused Learning (PFL)</li>
-                            <li>Motivation in financial applications: mean-variance optimization, goal-based investing</li>
-                            <li>Key conceptual distinctions and intuition behind decision-aware training</li>
-                            <li>Why prediction accuracy doesn't always lead to better decisions</li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="schedule-speaker">Yongjae Lee</div>
             </div>
-
             <div class="schedule-item">
-                <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">30 min</span>
-                        <span class="session-number">Session 2</span>
-                    </div>
-                    <div class="schedule-title">
-                        <h3>Background in Decision-Focused Learning</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
+                <div class="schedule-time">14:20</div>
+                <div class="schedule-content">
+                    <h3>DFL Theoretical Foundations</h3>
+                    <p>Mathematical framework and PyTorch implementation basics</p>
                 </div>
-                <div class="schedule-details">
-                    <div class="detail-content">
-                        <h4>Speaker: Haeun Jeon</h4>
-                        <ul>
-                            <li><strong>PFL vs DFL Pipeline:</strong> Understanding the fundamental paradigm shift from two-stage to end-to-end learning</li>
-                            <li><strong>Theoretical Considerations:</strong> Challenges of back-propagating through optimization problems, handling non-differentiable structures</li>
-                            <li><strong>[Hands-on Exercise]</strong> PyTorch Implementation:
-                                <ul class="sub-list">
-                                    <li>Building a simple DFL model from scratch</li>
-                                    <li>Integrating cvxpylayers for differentiable optimization</li>
-                                    <li>Observing gradient flow from decisions to predictions</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="schedule-speaker">Haeun Jeon</div>
             </div>
-
             <div class="schedule-item">
-                <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">30 min</span>
-                        <span class="session-number">Session 3</span>
-                    </div>
-                    <div class="schedule-title">
-                        <h3>DFL in Mean-Variance Optimization</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
+                <div class="schedule-time">14:50</div>
+                <div class="schedule-content">
+                    <h3>Mean-Variance Optimization Lab</h3>
+                    <p>Live coding session with real market data</p>
                 </div>
-                <div class="schedule-details">
-                    <div class="detail-content">
-                        <h4>Speaker: Junhyeong Lee</h4>
-                        <ul>
-                            <li><strong>Markowitz Framework Review:</strong> Mathematical formulation and parameter estimation techniques</li>
-                            <li><strong>[Hands-on Exercise]</strong> Complete DFL Pipeline Implementation:
-                                <ul class="sub-list">
-                                    <li>Neural network for return prediction</li>
-                                    <li>Differentiable optimization layer integration</li>
-                                    <li>End-to-end training loop implementation</li>
-                                    <li>Real-time experimentation with architectures</li>
-                                </ul>
-                            </li>
-                            <li><strong>PFL vs DFL Analysis:</strong> Live performance comparison with real market data, visualizing how DFL learns different prediction patterns</li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="schedule-speaker">Junhyeong Lee</div>
             </div>
-
             <div class="schedule-item">
-                <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">30 min</span>
-                        <span class="session-number">Session 4</span>
-                    </div>
-                    <div class="schedule-title">
-                        <h3>Goal-Based Investment & Partial Index Tracking</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
+                <div class="schedule-time">15:20</div>
+                <div class="schedule-content">
+                    <h3>Advanced Applications</h3>
+                    <p>Goal-based investment and partial index tracking</p>
                 </div>
-                <div class="schedule-details">
-                    <div class="detail-content">
-                        <h4>Speaker: Hyunglip Bae</h4>
-                        <ul>
-                            <li><strong>Goal-Based Investment:</strong> Optimization formulation with priority constraints, goal programming methodology</li>
-                            <li><strong>Partial Index Tracking:</strong> Replicating benchmark performance with limited assets using semidefinite relaxation</li>
-                            <li><strong>[Hands-on Exercise]</strong> Advanced DFL Applications:
-                                <ul class="sub-list">
-                                    <li>Implementing DFL for goal-based portfolio optimization</li>
-                                    <li>Surrogate-model approach for handling gradient challenges</li>
-                                    <li>Extending DFL beyond classical MVO</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="schedule-speaker">Hyunglip Bae</div>
             </div>
-
             <div class="schedule-item">
-                <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">10 min</span>
-                        <span class="session-number">Session 5</span>
-                    </div>
-                    <div class="schedule-title">
-                        <h3>Closing Remarks & Future Directions</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
+                <div class="schedule-time">15:50</div>
+                <div class="schedule-content">
+                    <h3>Future Directions & Q&A</h3>
+                    <p>Open challenges and interactive discussion</p>
                 </div>
-                <div class="schedule-details">
-                    <div class="detail-content">
-                        <h4>Speaker: Yongjae Lee</h4>
-                        <ul>
-                            <li>Open research challenges in decision-focused learning</li>
-                            <li>Emerging applications in financial AI</li>
-                            <li>Integration opportunities with existing financial systems</li>
-                            <li>Q&A session with all organizers</li>
-                            <li>Access to GitHub repository with code and datasets</li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="schedule-speaker">Yongjae Lee</div>
             </div>
         </div>
     </section>
 
-    <!-- Organizers Section -->
-    <section id="organizers" class="container">
+    <!-- Speakers Section -->
+    <section id="speakers" class="container">
         <div class="section-header">
-            <div class="section-number">02</div>
-            <h2>Organizers</h2>
+            <div class="section-number">03</div>
+            <h2>Expert Instructors</h2>
+            <p class="section-subtitle">Leaders from UNIST & KAIST</p>
         </div>
         
         <div class="speakers-grid">
-            <a href="https://www.linkedin.com/in/yongjae-lee-548982107" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
-                <div class="speaker-card">
-                    <div class="speaker-avatar">
-                        <div class="speaker-avatar-inner">
-                            <img src="images/yongjae-lee.jpg" alt="Yongjae Lee" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                    <h3 class="speaker-name">Yongjae Lee</h3>
-                    <p class="speaker-affiliation">UNIST</p>
-                </div>
-            </a>
-            <a href="https://www.linkedin.com/in/woo-chang-kim-a7774810" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
-                <div class="speaker-card">
-                    <div class="speaker-avatar">
-                        <div class="speaker-avatar-inner">
-                            <img src="images/woochang-kim.jpg" alt="Woo Chang Kim" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                    <h3 class="speaker-name">Woo Chang Kim</h3>
-                    <p class="speaker-affiliation">KAIST</p>
-                </div>
-            </a>
-            <a href="https://www.linkedin.com/in/junhyeong-lee-137b56202" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
-                <div class="speaker-card">
-                    <div class="speaker-avatar">
-                        <div class="speaker-avatar-inner">
-                            <img src="images/junhyeong-lee.jpg" alt="Junhyeong Lee" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                    <h3 class="speaker-name">Junhyeong Lee</h3>
-                    <p class="speaker-affiliation">UNIST</p>
-                </div>
-            </a>
-            <a href="https://www.linkedin.com/in/hyunglip-bae-85981b278" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
-                <div class="speaker-card">
-                    <div class="speaker-avatar">
-                        <div class="speaker-avatar-inner">
-                            <img src="images/hyunglip-bae.jpg" alt="Hyunglip Bae" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                    <h3 class="speaker-name">Hyunglip Bae</h3>
-                    <p class="speaker-affiliation">KAIST</p>
-                </div>
-            </a>
-            <a href="https://www.linkedin.com/in/haeun-jeon-08a4a3292" target="_blank" rel="noopener noreferrer" class="speaker-card-link">
-                <div class="speaker-card">
-                    <div class="speaker-avatar">
-                        <div class="speaker-avatar-inner">
-                            <img src="images/haeun-jeon.jpg" alt="Haeun Jeon" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                    <h3 class="speaker-name">Haeun Jeon</h3>
-                    <p class="speaker-affiliation">KAIST</p>
-                </div>
-            </a>
+            <div class="speaker-card">
+                <div class="speaker-avatar">YL</div>
+                <h3 class="speaker-name">Yongjae Lee</h3>
+                <p class="speaker-role">Lead Organizer</p>
+                <p class="speaker-affiliation">UNIST</p>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-avatar">WK</div>
+                <h3 class="speaker-name">Woo Chang Kim</h3>
+                <p class="speaker-role">Co-Organizer</p>
+                <p class="speaker-affiliation">KAIST</p>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-avatar">JL</div>
+                <h3 class="speaker-name">Junhyeong Lee</h3>
+                <p class="speaker-role">Instructor</p>
+                <p class="speaker-affiliation">UNIST</p>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-avatar">HB</div>
+                <h3 class="speaker-name">Hyunglip Bae</h3>
+                <p class="speaker-role">Instructor</p>
+                <p class="speaker-affiliation">KAIST</p>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-avatar">HJ</div>
+                <h3 class="speaker-name">Haeun Jeon</h3>
+                <p class="speaker-role">Instructor</p>
+                <p class="speaker-affiliation">KAIST</p>
+            </div>
         </div>
     </section>
 
@@ -1390,26 +931,26 @@
                     <ul>
                         <li>Basic Machine Learning</li>
                         <li>Python Programming</li>
+                        <li>Linear Algebra</li>
                         <li>Optimization Theory (helpful)</li>
                     </ul>
                 </div>
                 <div class="info-item">
                     <h3>What You'll Receive</h3>
                     <ul>
-                        <li>Lecture Slides</li>
-                        <li>Pre-configured Jupyter Notebooks</li>
-                        <li>Starter Code Templates</li>
+                        <li>Complete Lecture Slides</li>
+                        <li>Jupyter Notebooks</li>
+                        <li>Real Market Datasets</li>
+                        <li>GitHub Repository Access</li>
                     </ul>
                 </div>
                 <div class="info-item">
-                    <h3>Key Information</h3>
+                    <h3>Key Dates</h3>
                     <ul>
-                        <li>Date: TBD</li>
-                        <li>Time: TBD</li>
-                        <li>Format: In-person Tutorial</li>
-                        <li>Location: Singapore</li>
-                        <li>Conference: ICAIF 2025</li>
-                        <li>Duration: 2 Hours</li>
+                        <li>Early Registration: Oct 31</li>
+                        <li>Regular Registration: Nov 30</li>
+                        <li>Tutorial Date: Dec 14</li>
+                        <li>Location: Vancouver, Canada</li>
                     </ul>
                 </div>
             </div>
@@ -1421,20 +962,52 @@
         <div class="cta-content">
             <h2 class="cta-title">Ready to Transform Your Approach?</h2>
             <p class="cta-subtitle">Join Us at ICAIF 2025</p>
-            <div class="cta-buttons">
-                <a href="https://icaif25.org/registration/" class="btn btn-primary">Register for ICAIF 2025</a>
+            <div style="margin-top: 3rem;">
+                <a href="https://icaif.org" class="btn btn-primary" style="margin-right: 2rem;">Register for ICAIF 2025</a>
                 <a href="#" class="btn btn-outline">Download Materials</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="padding: 2rem 4rem; background: var(--darker); border-top: 1px solid rgba(255,255,255,0.1);">
-        <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
-            <p style="color: var(--gray); font-size: 0.875rem; letter-spacing: 0.1em;">
-                <span style="text-transform: uppercase;">© 2025 DFL @ ICAIF'25 • UNIST & KAIST • Contact: </span>
-                <a href="mailto:jun.lee@unist.ac.kr" style="color: var(--gray); text-decoration: none;">jun.lee@unist.ac.kr</a>
-            </p>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>DFL @ ICAIF'25</h3>
+                <p style="color: var(--gray); margin-top: 1rem;">
+                    Decision-Focused Learning in Financial Optimization<br>
+                    A collaboration between UNIST and KAIST
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#topics">Topics</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#speakers">Speakers</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Tutorial Slides</a></li>
+                    <li><a href="#">Code Repository</a></li>
+                    <li><a href="#">Datasets</a></li>
+                    <li><a href="#">References</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:yongjaelee@unist.ac.kr">yongjaelee@unist.ac.kr</a></li>
+                    <li><a href="mailto:wkim@kaist.ac.kr">wkim@kaist.ac.kr</a></li>
+                    <li><a href="https://icaif.org">ICAIF 2025</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Decision-Focused Learning Tutorial • ICAIF 2025 • Vancouver, Canada
         </div>
     </footer>
 
@@ -1448,39 +1021,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Schedule accordion toggle
-        function toggleSchedule(element) {
-            const scheduleItem = element.parentElement;
-            const allItems = document.querySelectorAll('.schedule-item');
-            
-            // Close other items
-            allItems.forEach(item => {
-                if (item !== scheduleItem) {
-                    item.classList.remove('active');
-                }
-            });
-            
-            // Toggle current item
-            scheduleItem.classList.toggle('active');
-        }
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
