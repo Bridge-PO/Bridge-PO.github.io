@@ -483,9 +483,9 @@
         }
 
         .schedule-header {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
             padding: 2rem;
             cursor: pointer;
             user-select: none;
@@ -494,19 +494,6 @@
 
         .schedule-header:hover {
             background: linear-gradient(90deg, rgba(255,0,64,0.1) 0%, transparent 50%);
-        }
-
-        .schedule-time {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .time-duration {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--red);
-            line-height: 1;
         }
 
         .session-number {
@@ -962,19 +949,7 @@
 
             /* Schedule Mobile */
             .schedule-header {
-                grid-template-columns: 1fr;
-                gap: 1rem;
                 padding: 1.5rem;
-            }
-
-            .schedule-time {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .time-duration {
-                font-size: 1.5rem;
             }
 
             .schedule-title {
@@ -1174,16 +1149,13 @@
         <div class="section-header">
             <div class="section-number">01</div>
             <h2>Tutorial Schedule</h2>
-            <p class="section-subtitle">3.5 Hours • 3 Hands-on Exercises • Interactive Sessions</p>
+            <p class="section-subtitle">3 Hands-on Exercises • Interactive Sessions</p>
         </div>
         
         <div class="schedule-container">
             <div class="schedule-item">
                 <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">20 min</span>
-                        <span class="session-number">Session 1</span>
-                    </div>
+                    <span class="session-number">Session 1</span>
                     <div class="schedule-title">
                         <h3>Introduction & Motivation</h3>
                         <span class="toggle-icon">+</span>
@@ -1204,10 +1176,7 @@
 
             <div class="schedule-item">
                 <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">30 min</span>
-                        <span class="session-number">Session 2</span>
-                    </div>
+                    <span class="session-number">Session 2</span>
                     <div class="schedule-title">
                         <h3>Background in Decision-Focused Learning</h3>
                         <span class="toggle-icon">+</span>
@@ -1233,10 +1202,7 @@
 
             <div class="schedule-item">
                 <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">30 min</span>
-                        <span class="session-number">Session 3</span>
-                    </div>
+                    <span class="session-number">Session 3</span>
                     <div class="schedule-title">
                         <h3>DFL in Mean-Variance Optimization</h3>
                         <span class="toggle-icon">+</span>
@@ -1263,10 +1229,7 @@
 
             <div class="schedule-item">
                 <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">30 min</span>
-                        <span class="session-number">Session 4</span>
-                    </div>
+                    <span class="session-number">Session 4</span>
                     <div class="schedule-title">
                         <h3>DFL in Partial Index Tracking</h3>
                         <span class="toggle-icon">+</span>
@@ -1292,10 +1255,7 @@
 
             <div class="schedule-item">
                 <div class="schedule-header" onclick="toggleSchedule(this)">
-                    <div class="schedule-time">
-                        <span class="time-duration">10 min</span>
-                        <span class="session-number">Session 5</span>
-                    </div>
+                    <span class="session-number">Session 5</span>
                     <div class="schedule-title">
                         <h3>Closing Remarks & Future Directions</h3>
                         <span class="toggle-icon">+</span>
